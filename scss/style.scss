@@ -1,0 +1,279 @@
+// FONTS
+@font-face {
+    font-family: 'Lato';
+    src: url(/fonts/Lato-Medium.woff) format('woff');
+    src: url(/fonts/Lato-Medium.woff2) format('woff2');
+    font-weight: medium;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url(/fonts/Lato-Regular.woff) format('woff');
+    src: url(/fonts/Lato-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url(/fonts/Lato-Semibold.woff) format('woff');
+    src: url(/fonts/Lato-Semibold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+// MIXINS
+@mixin font-Lato {
+    font-family: 'Lato', sans-serif;
+}
+@mixin font-Rubik {
+    font-family: 'Rubik', sans-serif;
+}
+@mixin font-alt-color {
+    color: #848484;
+}
+@mixin font-main-color {
+    color: #1a212f;
+}
+@mixin block-center {
+    margin: 0 auto;
+    width: 1170px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFEFD;
+}
+
+.header-text-main {
+    @include font-Rubik();
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.button-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    background-color: #FFFEFD;
+    @include font-Lato();
+    @include font-main-color();
+    width: 206px;
+    height: 50px;
+    border: none;
+    box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1);
+    border-radius: 25px;
+    p {
+        display: inline-block;
+        margin: 0;
+        margin-left: 30px;
+    }
+    img {
+        margin-right: 5px;
+    }
+    &:hover {
+        box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.5);
+        transition: 0.3s;
+    }
+}
+
+.visually-hidden {
+    //display: none;
+}
+
+// HEADER
+.section-header {
+    @include block-center();
+    display: flex;
+    justify-content: space-between;
+    &-logo {}
+    &-menu {
+            margin: 0px;
+            padding: 0px;
+            li {
+                & + li {
+                    margin-left: 30px;
+                }
+                list-style: none;
+                display: inline;
+            }
+            &__item {
+                @include font-Lato();
+                @include font-main-color();
+                font-size: 16px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+    }
+}
+
+// LANDING
+.section-landing {
+    height: 504px;
+    background-image: 
+        url(../img/kotik32.png),
+        url(../img/kotik2.png),
+        url(../img/kotik1.png);
+    background-position: left center center;
+    @include font-Lato();
+    @include font-main-color();
+    &-text {
+        display: flex;
+        flex-direction: column;
+        padding-top: 153px;
+        padding-left: 198px;
+        &-item1 {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        &-item2 {
+            @include font-Rubik();
+            font-size: 62px;
+            font-weight: bold;
+        }
+        &-item3 {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: medium;
+        }
+    }
+    &-button {
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: 198px;
+        }
+}
+
+// FEATURE
+.section-feature {
+    @include block-center();
+    @include font-Rubik();
+    @include font-main-color();
+    background-color: #FFFEFD;
+    &-header {
+        margin-top: 140px;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    &-paw {
+        position: absolute;
+        right: 0px;
+        top: 540px;
+        z-index: 0;
+    }
+    &-table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        z-index: 5;
+        &__item {
+            width: 370px;
+            height: 321px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+            margin-bottom: 20px;
+            ul {
+                padding: 0px;
+                margin: 0px;
+                li {
+                    margin-left: 30px;
+                    list-style: none;
+                    img {
+                        margin-top: 30px;
+                        margin-bottom: 35px;
+                    }
+                    &.item-title {
+                        font-size: 22px;
+                        line-height: 120%;
+                        font-weight: medium;
+                        margin-bottom: 20px;
+                    }
+                    &.item-text {
+                        @include font-Lato();
+                        font-size: 16px;
+                        line-height: 140%;
+                        font-weight: normal;
+                    }
+                }
+            }    
+        }
+    }
+}
+
+// ROOMS
+.section-rooms {
+    &-header {
+        margin-top: 120px;
+        text-align: center;
+    }
+    &-fish {
+        position: absolute;
+        left: 0px;
+        top: 1626px;
+        z-index: 0;
+    }
+    &-slider {
+        &-item {
+            position: relative;
+            z-index: 1;
+            left: 15%;
+            margin-top: 70px;
+            &__picture {
+                border-radius: 10px;
+            }
+            &__description {
+                width: 500px;
+                height: 284px;
+                border-radius: 8px;
+                box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.5);
+                position: relative;
+                left: 530px;
+                bottom: 344px;
+                background-color: white;
+                h3 {
+                    font-size: 22px;
+                    margin-top: 0px;
+                }
+                li {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    &-slider-control {
+        font-size: 0px;
+        label {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #E1E1E1;
+            margin-right: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+
+// SLIDER-CONTROLS
+
+#slide1:checked ~ .slider-control label[for='slide1'],
+#slide2:checked ~ .slider-control label[for='slide2'],
+#slide3:checked ~ .slider-control label[for='slide3'] {
+  background-color: #FAC663;
+}
+
+// FEEDBACK
+.section-feedback {}
+
+// MAP
+.section-map {}
+
+// FOOTER
+.section-footer {}
