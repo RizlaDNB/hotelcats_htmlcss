@@ -13,5 +13,13 @@
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RizlaDNB/hotelcats_htmlcss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RizlaDNB/hotelcats_htmlcss/issues"
+  },
+  "homepage": "https://github.com/RizlaDNB/hotelcats_htmlcss#readme",
   "description": ""
 }
