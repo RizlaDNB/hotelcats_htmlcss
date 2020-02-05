@@ -620,7 +620,7 @@ input[type="radio"].visually-hidden {
 }
 
 .modal-booking {
-    display: block;
+    display: none;
     top: 2%;
     left: 50%;
     transform: translateX(-50%);
@@ -715,7 +715,7 @@ input[type="radio"].visually-hidden {
     
     background: rgba(0, 0, 0, 0.7);
     z-index: 90;
-    display: block;
+    display: none;
 }
 
 .form-date-wrapper {
@@ -725,7 +725,7 @@ input[type="radio"].visually-hidden {
     margin-bottom: 30px;
 }
 
-.modal-close {
+.modal-close-button {
     position: absolute;
     top: 40px;
     right: 40px;

@@ -234,7 +234,7 @@
 
     <!-- MODAL -->
 
-    <section class="modal modal-booking closed">
+    <section class="modal modal-booking">
         <h1 class="modal-booking-description">Забронировать номер</h1>
         <form action="#" method="POST" class="modal-booking-form">
             <p>
@@ -269,9 +269,9 @@
             <button class="modal-send-button" type="submit">Отправить заявку</button>
         </form>
         <img src="img/modal-paw.svg" alt="">
-        <button class="modal-close" type="button">Закрыть</button>
+        <button class="modal-close-button modal-close" type="button">Закрыть</button>
     </section>
-    <div class="modal modal-overlay closed"></div>
+    <div class="modal modal-overlay modal-close"></div>
 
     <!-- SCRIPTS -->
     <script src="js/jquery-1.12.4.min.js"></script>
@@ -308,8 +308,10 @@
             });
         });
     </script>
+    <!-- ВРЕМЕННО ОТКЛЮЧЕНА КАРТА
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=e56c147b-2892-431e-96b8-99824e33bc1e" type="text/javascript"></script>
     <script src="js/icon_customImage.js" type="text/javascript"></script>
+    -->
     <script src="js/modal.js" type="text/javascript"></script>
 </body>
 </html>

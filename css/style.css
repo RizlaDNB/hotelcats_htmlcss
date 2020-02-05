@@ -494,7 +494,7 @@ input[type="radio"].visually-hidden {
   z-index: 99; }
 
 .modal-booking {
-  display: block;
+  display: none;
   top: 2%;
   left: 50%;
   transform: translateX(-50%);
@@ -579,7 +579,7 @@ input[type="radio"].visually-hidden {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 90;
-  display: block; }
+  display: none; }
 
 .form-date-wrapper {
   display: flex;
@@ -587,7 +587,7 @@ input[type="radio"].visually-hidden {
   align-items: center;
   margin-bottom: 30px; }
 
-.modal-close {
+.modal-close-button {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -597,7 +597,7 @@ input[type="radio"].visually-hidden {
   background-color: #FFFEFD;
   border: 0;
   cursor: pointer; }
-  .modal-close::before, .modal-close::after {
+  .modal-close-button::before, .modal-close-button::after {
     content: '';
     position: absolute;
     top: 7px;
@@ -606,9 +606,9 @@ input[type="radio"].visually-hidden {
     height: 2px;
     border-radius: 20%;
     background-color: #1A212F; }
-  .modal-close:before {
+  .modal-close-button:before {
     transform: rotate(45deg); }
-  .modal-close:after {
+  .modal-close-button:after {
     transform: rotate(-45deg); }
 
 .modal.closed {

@@ -1,19 +1,14 @@
-const modal = document.querySelector('.modal-booking'),
-    modalOverlay = document.querySelector('.modal-overlay'),
-    closeButton = document.querySelector('.modal-close'),
-    openButton = document.querySelector('.modal-open');
+var modal = document.querySelector('.modal-booking'),
+    modalOverlay = document.querySelector('.modal-overlay');
 
-closeButton.addEventListener('click', function(){
-    modal.classList.toggle('closed');
-    modalOverlay.classList.toggle('closed');
+$('.modal-open').on('click', function (evt) {
+    evt.preventDefault();
+    modal.style.display = "block";
+    modalOverlay.style.display = "block";
 });
 
-openButton.addEventListener('click', function(){
-    modal.classList.toggle('closed');
-    modalOverlay.classList.toggle('closed');
-});
-
-modalOverlay.addEventListener('click', function(){
-    modal.classList.toggle('closed');
-    modalOverlay.classList.toggle('closed');
+$('.modal-close').on('click', function (evt) {
+    evt.preventDefault();
+    modal.style.display = "none";
+    modalOverlay.style.display = "none";
 });
