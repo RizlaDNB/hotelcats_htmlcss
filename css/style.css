@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'Lato';
-  src: url(/fonts/Lato-Medium.woff) format("woff");
-  src: url(/fonts/Lato-Medium.woff2) format("woff2");
+  src: url(../fonts/Lato-Medium.woff) format("woff");
+  src: url(../fonts/Lato-Medium.woff2) format("woff2");
   font-weight: medium;
   font-style: normal; }
 
 @font-face {
   font-family: 'Lato';
-  src: url(/fonts/Lato-Regular.woff) format("woff");
-  src: url(/fonts/Lato-Regular.woff2) format("woff2");
+  src: url(../fonts/Lato-Regular.woff) format("woff");
+  src: url(../fonts/Lato-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Lato';
-  src: url(/fonts/Lato-Semibold.woff) format("woff");
-  src: url(/fonts/Lato-Semibold.woff2) format("woff2");
+  src: url(../fonts/Lato-Semibold.woff) format("woff");
+  src: url(../fonts/Lato-Semibold.woff2) format("woff2");
   font-weight: 600;
   font-style: normal; }
 
@@ -96,7 +96,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   bottom: -70px;
   right: 46px;
-  background: url(/img/left-arrow.svg) no-repeat center; }
+  background: url(../img/left-arrow.svg) no-repeat center; }
   .prev-rooms-arrow:active {
     border: 2px solid #FF7236; }
 
@@ -104,7 +104,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   bottom: -70px;
   right: 0;
-  background: url(/img/right-arrow.svg) no-repeat center; }
+  background: url(../img/right-arrow.svg) no-repeat center; }
   .next-rooms-arrow:active {
     border: 2px solid #FF7236; }
 
@@ -112,7 +112,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   bottom: -70px;
   right: 46px;
-  background: url(/img/left-arrow.svg) no-repeat center; }
+  background: url(../img/left-arrow.svg) no-repeat center; }
   .prev-feedback-arrow:active {
     border: 2px solid #FF7236; }
 
@@ -120,7 +120,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   bottom: -70px;
   right: 0;
-  background: url(/img/right-arrow.svg) no-repeat center; }
+  background: url(../img/right-arrow.svg) no-repeat center; }
   .next-feedback-arrow:active {
     border: 2px solid #FF7236; }
 
@@ -148,8 +148,8 @@ input[type="radio"].visually-hidden {
   margin: 0 auto;
   width: 1170px;
   height: 504px;
-  background-image: url(../img/kotik32.png), url(../img/kotik2.png), url(../img/kotik1.png);
-  background-position: left center center;
+  background-image: url(../img/kotik2.png);
+  background-position: center;
   font-family: 'Lato', sans-serif;
   color: #1a212f; }
   .section-landing-text {
@@ -289,7 +289,7 @@ input[type="radio"].visually-hidden {
           display: inline-block;
           width: 36px;
           height: 36px;
-          background: url(/img/paw_white.png) no-repeat center; }
+          background: url(../img/paw_white.png) no-repeat center; }
 
 .section-feedback-header {
   text-align: center;
@@ -329,7 +329,7 @@ input[type="radio"].visually-hidden {
         display: inline-block;
         width: 27px;
         height: 27px;
-        background: url(/img/feedback-text-decoration.svg) no-repeat center;
+        background: url(../img/feedback-text-decoration.svg) no-repeat center;
         position: absolute;
         top: 35px;
         left: 35px; }
@@ -564,7 +564,7 @@ input[type="radio"].visually-hidden {
     content: '';
     width: 36px;
     height: 36px;
-    background: url(/img/paw_white.png); }
+    background: url(../img/paw_white.png); }
 
 .form-date-wrapper {
   display: flex;
