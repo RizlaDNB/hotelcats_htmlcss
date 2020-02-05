@@ -611,5 +611,13 @@ input[type="radio"].visually-hidden {
   .modal-close-button:after {
     transform: rotate(-45deg); }
 
-.modal.closed {
-  display: none; }
+.modal-show {
+  display: block;
+  animation-name: opacity-in;
+  animation-duration: 0.5s; }
+
+@keyframes opacity-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

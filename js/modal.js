@@ -1,5 +1,7 @@
 var modal = document.querySelector('.modal-booking'),
     modalOverlay = document.querySelector('.modal-overlay'),
+    modalOpen = document.getElementsByClassName('modal-open-button'),
+    modalClose = document.querySelector('.modal-close-button'),
     ownerName = document.querySelector('[name=owner-name]'),
     petName = document.querySelector('[name=pet-name]'),
     phoneNumber = document.querySelector('[name=phone-number]'),
@@ -8,20 +10,32 @@ var modal = document.querySelector('.modal-booking'),
     toDate = document.querySelector('[name=to-date]'),
     formError = modal.querySelector('form');
 
-$('.modal-open').on('click', function (evt) {
+//Открытие модального окна с любой кнопки
+for (var i = 0; i < modalOpen.length; i++) {
+        modalOpen[i].addEventListener('click', function(evt) {
+            evt.preventDefault();
+            modal.classList.add('modal-show');
+            modalOverlay.classList.add('modal-show');
+            ownerName.focus();
+        })  
+};
+
+//Закрытие модалки по кнопке
+modalClose.addEventListener('click', function(evt) {
     evt.preventDefault();
-    modal.style.display = "block";
-    modalOverlay.style.display = "block";
-    ownerName.focus();
+    modal.classList.remove('modal-show');
+    modalOverlay.classList.remove('modal-show');
 });
 
-$('.modal-close').on('click', function (evt) {
+//Закрытие модалки по клику в любую область, кроме модалки
+modalOverlay.addEventListener('click', function(evt) {
     evt.preventDefault();
-    modal.style.display = "none";
-    modalOverlay.style.display = "none";
+    modal.classList.remove('modal-show');
+    modalOverlay.classList.remove('modal-show');
 });
 
-$('form').on('submit', function(evt){
+//TODO Алерт, в случае если ничего не введено в форму
+formError.addEventListener('submit', function(evt) {
     if (!ownerName || !petName || !phoneNumber || !email || !fromDate || !toDate) {
         evt.preventDefault();
         console.log('Заполните все поля');
