@@ -34,7 +34,7 @@
             <span class="section-landing-text-item2">Котейка</span>
             <span class="section-landing-text-item3">Уютная гостиница для котов и кошек</span>    
         </div>
-        <a href="#" class="section-landing-button button-main">
+        <a href="#" class="section-landing-button button-main modal-open">
             <p>Забронировать</p>
             <img src="img/paw.svg" alt="">
         </a>
@@ -110,7 +110,7 @@
                         <li><p>Размеры (ШхГхВ) — 90х100х180 см</p></li>
                         <li><p>Цена за сутки: 200₽</p></li>
                     </ul>
-                    <a class='button-main slider-button'href="#">Забронировать</a>
+                    <a class='button-main slider-button modal-open'href="">Забронировать</a>
                 </div>
             </div>
             <div class="section-rooms-slider-item">
@@ -124,7 +124,7 @@
                         <li><p>Размеры (ШхГхВ) — 100x125х180 см</p></li>
                         <li><p>Цена за сутки: 250₽</p></li>
                     </ul>
-                    <a class='button-main slider-button'href="#">Забронировать</a>
+                    <a class='button-main slider-button modal-open'href="">Забронировать</a>
                 </div>
             </div>
             <div class="section-rooms-slider-item">
@@ -138,7 +138,7 @@
                         <li><p>Размеры (ШхГхВ) — 125x125х180 см</p></li>
                         <li><p>Цена за сутки: 350₽</p></li>
                     </ul>
-                    <a class='button-main slider-button'href="#">Забронировать</a>
+                    <a class='button-main slider-button modal-open'href="">Забронировать</a>
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@
 
     <!-- MODAL -->
 
-    <section class="modal modal-booking">
+    <section class="modal modal-booking closed">
         <h1 class="modal-booking-description">Забронировать номер</h1>
         <form action="#" method="POST" class="modal-booking-form">
             <p>
@@ -271,6 +271,7 @@
         <img src="img/modal-paw.svg" alt="">
         <button class="modal-close" type="button">Закрыть</button>
     </section>
+    <div class="modal modal-overlay closed"></div>
 
     <!-- SCRIPTS -->
     <script src="js/jquery-1.12.4.min.js"></script>
@@ -309,5 +310,6 @@
     </script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=e56c147b-2892-431e-96b8-99824e33bc1e" type="text/javascript"></script>
     <script src="js/icon_customImage.js" type="text/javascript"></script>
+    <script src="js/modal.js" type="text/javascript"></script>
 </body>
 </html>
