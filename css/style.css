@@ -1,22 +1,25 @@
 @font-face {
-  font-family: 'Lato';
-  src: url(../fonts/Lato-Medium.woff) format("woff");
-  src: url(../fonts/Lato-Medium.woff2) format("woff2");
-  font-weight: medium;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Lato';
-  src: url(../fonts/Lato-Regular.woff) format("woff");
-  src: url(../fonts/Lato-Regular.woff2) format("woff2");
+  font-family: 'Lato Medium';
+  src: url("../fonts/Lato-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Lato';
-  src: url(../fonts/Lato-Semibold.woff) format("woff");
-  src: url(../fonts/Lato-Semibold.woff2) format("woff2");
-  font-weight: 600;
+  font-family: 'Lato Regular';
+  src: url("../fonts/Lato-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Lato Semibold';
+  src: url("../fonts/Lato-Semibold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Lato Bold';
+  src: url("../fonts/Lato-Bold.woff") format("woff");
+  font-weight: normal;
   font-style: normal; }
 
 * {
@@ -25,7 +28,7 @@
 body {
   background-color: #FFFEFD; }
 
-.header-text-main {
+.headers-text-main {
   font-family: 'Rubik', sans-serif;
   font-size: 36px;
   font-weight: bold; }
@@ -39,7 +42,7 @@ body {
   align-items: center;
   text-decoration: none;
   background-color: #FFFEFD;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato Semibold', sans-serif;
   color: #1a212f;
   width: 206px;
   height: 50px;
@@ -115,7 +118,7 @@ input[type="radio"].visually-hidden {
 
 .prev-feedback-arrow {
   position: absolute;
-  bottom: -70px;
+  bottom: -40px;
   right: 46px;
   background: url(../img/left-arrow.svg) no-repeat center; }
   .prev-feedback-arrow:active {
@@ -123,7 +126,7 @@ input[type="radio"].visually-hidden {
 
 .next-feedback-arrow {
   position: absolute;
-  bottom: -70px;
+  bottom: -40px;
   right: 0;
   background: url(../img/right-arrow.svg) no-repeat center; }
   .next-feedback-arrow:active {
@@ -131,11 +134,22 @@ input[type="radio"].visually-hidden {
 
 .section-header {
   margin: 0 auto;
-  width: 1170px;
+  max-width: 1170px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
+  .section-header-logo {
+    margin-top: 4px;
+    margin-bottom: 8px; }
+    .section-header-logo__link {
+      font-family: 'Lato Semibold', sans-serif;
+      color: #1a212f;
+      font-size: 16px;
+      text-decoration: none; }
+      .section-header-logo__link img {
+        width: 100%; }
   .section-header-menu {
     margin: 0px;
     padding: 0px; }
@@ -143,21 +157,21 @@ input[type="radio"].visually-hidden {
       list-style: none;
       display: inline; }
       .section-header-menu li + li {
-        margin-left: 30px; }
+        margin-left: 26px; }
     .section-header-menu__item {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato Semibold', sans-serif;
       color: #1a212f;
       font-size: 16px;
-      font-weight: 600;
       text-decoration: none; }
 
 .section-landing {
   margin: 0 auto;
-  width: 1170px;
   height: 504px;
-  background-image: url(../img/kotik2.png);
-  background-position: center;
-  font-family: 'Lato', sans-serif;
+  max-width: 1366px;
+  background-image: url(../img/kotik3.png), url(../img/kotik2.png);
+  background-position: left, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto, auto;
   color: #1a212f; }
   .section-landing-text {
     display: -webkit-box;
@@ -168,35 +182,36 @@ input[type="radio"].visually-hidden {
     padding-top: 153px;
     padding-left: 198px; }
     .section-landing-text-item1 {
-      font-size: 14px;
-      font-weight: normal; }
+      font-family: 'Lato Regular', sans-serif;
+      font-size: 14px; }
     .section-landing-text-item2 {
       font-family: 'Rubik', sans-serif;
       font-size: 62px;
       font-weight: bold; }
     .section-landing-text-item3 {
+      font-family: 'Lato Medium', sans-serif;
       font-size: 20px;
-      margin-bottom: 40px;
-      font-weight: medium; }
+      margin-bottom: 40px; }
   .section-landing-button {
-    font-weight: 600;
+    font-family: 'Lato Semibold', sans-serif;
     font-size: 16px;
     margin-left: 198px; }
 
 .section-feature {
   margin: 0 auto;
-  width: 1170px;
   font-family: 'Rubik', sans-serif;
   color: #1a212f;
-  background-color: #FFFEFD; }
+  background-color: #FFFEFD;
+  max-width: 1170px; }
   .section-feature-header {
-    margin-top: 140px;
-    margin-bottom: 70px;
+    margin-top: 130px;
+    margin-bottom: 65px;
     text-align: center; }
   .section-feature-paw {
     position: absolute;
-    right: 0px;
-    top: 540px;
+    right: 50%;
+    top: 550px;
+    transform: translateX(750px);
     z-index: 0; }
   .section-feature-table {
     display: -webkit-box;
@@ -211,8 +226,11 @@ input[type="radio"].visually-hidden {
       height: 321px;
       background: #ffffff;
       border-radius: 8px;
-      box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+      box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.4);
       margin-bottom: 20px; }
+      .section-feature-table__item:hover {
+        box-shadow: 0px 0px 25px #d0d0d0;
+        transition: 0.5s; }
       .section-feature-table__item ul {
         padding: 0px;
         margin: 0px; }
@@ -228,21 +246,21 @@ input[type="radio"].visually-hidden {
             font-weight: normal;
             margin-bottom: 20px; }
           .section-feature-table__item ul li.item-text {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Lato Regular', sans-serif;
             font-size: 16px;
             line-height: 140%;
-            font-weight: normal;
             max-width: 317px; }
 
 .section-rooms {
   margin: 0 auto;
-  width: 1170px; }
+  max-width: 1170px; }
   .section-rooms-header {
     margin-top: 120px;
     text-align: center; }
   .section-rooms-fish {
     position: absolute;
-    left: 0px;
+    left: 50%;
+    transform: translateX(-684px);
     top: 1626px;
     z-index: 0; }
   .section-rooms-slider-item {
@@ -254,7 +272,7 @@ input[type="radio"].visually-hidden {
       border-radius: 10px;
       max-width: 600px; }
     .section-rooms-slider-item__description {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato Regular', sans-serif;
       color: #1a212f;
       width: 500px;
       height: 284px;
@@ -288,9 +306,9 @@ input[type="radio"].visually-hidden {
         background-color: #fac663;
         margin-right: 8px; }
       .section-rooms-slider-item__description a {
+        font-family: 'Lato Semibold', sans-serif;
         margin-top: 30px;
         font-size: 16px;
-        font-weight: 600;
         color: #fffefd;
         background-color: #ff7236;
         box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1);
@@ -309,29 +327,30 @@ input[type="radio"].visually-hidden {
 
 .section-feedback-paw {
   position: absolute;
-  right: 0px;
+  right: 50%;
+  transform: translateX(780px);
   top: 2250px;
   z-index: 0; }
 
 .section-feedback-slider {
   margin: 0 auto;
-  width: 1170px; }
+  max-width: 1170px; }
   .section-feedback-slider-item {
     position: relative;
     z-index: 5;
     width: 470px;
     height: 206px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato Medium', sans-serif;
     color: #1a212f;
     background: #FFFFFF;
-    box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.5);
     border-radius: 8px;
     padding-top: 35px;
     padding-left: 70px;
     margin-top: 70px;
-    margin-right: 30px; }
+    margin-right: 30px;
+    margin-bottom: 30px; }
     .section-feedback-slider-item p {
-      font-weight: 500;
       font-size: 16px;
       line-height: 140%;
       margin: 0px;
@@ -352,15 +371,15 @@ input[type="radio"].visually-hidden {
       justify-content: space-between;
       max-width: 362px; }
       .section-feedback-slider-item-container span {
+        font-family: 'Lato Regular', sans-serif;
         margin-top: 25px;
         color: #848484;
         font-size: 14px;
-        line-height: 17px;
-        font-weight: normal; }
+        line-height: 17px; }
 
 .feedback-dots {
   position: absolute;
-  bottom: -46px;
+  bottom: -16px;
   display: block;
   width: 100%;
   height: 0px;
@@ -414,26 +433,28 @@ input[type="radio"].visually-hidden {
   border-radius: 50%; }
 
 .section-contact {
-  margin-top: 220px;
-  background-color: #FAC663; }
+  margin-top: 190px; }
   .section-contact-wrapper {
     margin: 0 auto;
-    width: 1170px;
+    max-width: 1366px;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
     background-color: #FAC663; }
     .section-contact-wrapper .section-contact-info {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato Regular', sans-serif;
       color: #1a212f;
-      background-color: #FAC663; }
+      background-color: #FAC663;
+      margin-left: 198px; }
       .section-contact-wrapper .section-contact-info-header {
         font-family: 'Rubik', sans-serif;
+        font-weight: bold;
         font-size: 36px;
         line-height: 43px;
         margin-bottom: 50px; }
       .section-contact-wrapper .section-contact-info-title {
+        font-family: 'Lato Bold', sans-serif;
         margin: 0;
         margin-top: 35px;
         font-size: 16px;
@@ -450,12 +471,16 @@ input[type="radio"].visually-hidden {
         .section-contact-wrapper .section-contact-info-social a {
           margin-right: 16px;
           font-size: 0px; }
-          .section-contact-wrapper .section-contact-info-social a .social-icon path:hover, .section-contact-wrapper .section-contact-info-social a .social-icon path:active {
-            fill: #FF7236; }
     .section-contact-wrapper .section-contact-map {
       width: 798px;
       height: 580px; }
+      .section-contact-wrapper .section-contact-map p {
+        position: absolute;
+        z-index: 1;
+        margin: 0; }
       .section-contact-wrapper .section-contact-map #map {
+        position: relative;
+        z-index: 2;
         width: 100%;
         height: 100%;
         padding: 0;
@@ -463,7 +488,7 @@ input[type="radio"].visually-hidden {
 
 .section-footer-menu {
   margin: 0 auto;
-  width: 1170px;
+  max-width: 970px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
@@ -474,6 +499,8 @@ input[type="radio"].visually-hidden {
   .section-footer-menu-logo {
     margin-top: 12px;
     margin-bottom: 12px; }
+    .section-footer-menu-logo img {
+      width: 100%; }
   .section-footer-menu-nav {
     margin: 0px;
     padding: 0px; }
@@ -483,23 +510,22 @@ input[type="radio"].visually-hidden {
       .section-footer-menu-nav li + li {
         margin-left: 30px; }
     .section-footer-menu-nav__item {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato Semibold', sans-serif;
       color: #1a212f;
       font-size: 16px;
       line-height: 19px;
-      font-weight: 600;
       text-decoration: none; }
 
 .section-footer-copyrights {
   margin: 0 auto;
-  width: 1170px;
+  max-width: 970px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 20px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   color: #848484;
   font-weight: normal;
   font-size: 12px;
@@ -525,9 +551,9 @@ input[type="radio"].visually-hidden {
   height: 650px;
   max-height: 100%;
   padding: 70px 70px;
-  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+  box-shadow: 0px 0px 25px #d0d0d0;
   border-radius: 10px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   color: #1a212f; }
   .modal-booking img {
     position: absolute;
@@ -545,8 +571,7 @@ input[type="radio"].visually-hidden {
     margin: 0;
     margin-bottom: 20px;
     font-size: 16px;
-    line-height: 19px;
-    font-weight: normal; }
+    line-height: 19px; }
   .modal-booking-form input[type='text'] {
     box-sizing: border-box;
     width: 430px;
@@ -567,7 +592,6 @@ input[type="radio"].visually-hidden {
 
 .modal-send-button {
   margin: 0 auto;
-  width: 1170px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
@@ -575,12 +599,11 @@ input[type="radio"].visually-hidden {
   -webkit-box-align: center;
   align-items: center;
   background-color: #FF7236;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato Semibold', sans-serif;
   color: #1a212f;
   color: #FFFEFD;
   font-size: 16px;
   line-height: 19px;
-  font-weight: normal;
   width: 230px;
   height: 50px;
   border: none;
@@ -602,7 +625,7 @@ input[type="radio"].visually-hidden {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   z-index: 90;
   display: none; }
 

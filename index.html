@@ -13,16 +13,18 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header class="section-header wrapper-inner">
+    <header class="section-header">
         <div class="section-header-logo">
-            <img src="img/лого.svg" alt="LOGO">
+            <a href="index.html" class="section-header-logo__link">
+                <img src="img/лого.svg" alt="Котейка">
+            </a>
         </div>
         <div class="section-header-menu">
             <ul>
-                <li><a href="#" class="section-header-menu__item">Почему мы?</a></li>
-                <li><a href="#" class="section-header-menu__item">Номера</a></li>
-                <li><a href="#" class="section-header-menu__item">Отзывы</a></li>
-                <li><a href="#" class="section-header-menu__item">Как нас найти</a></li>
+                <li><a href="#features-section" class="section-header-menu__item">Почему мы?</a></li>
+                <li><a href="catalogue.html" class="section-header-menu__item">Номера</a></li>
+                <li><a href="#feedback-section" class="section-header-menu__item">Отзывы</a></li>
+                <li><a href="#address-section" class="section-header-menu__item">Как нас найти</a></li>
             </ul>
         </div>
     </header>
@@ -41,10 +43,10 @@
     </section>
     
     <!-- FEATURES -->
-    <section class="section-feature">
-        <h1 class="section-feature-header header-text-main">Почему мы?</h1>
+    <section class="section-feature" id="features-section">
+        <h1 class="section-feature-header headers-text-main">Почему мы?</h1>
         <div class="section-feature-paw">
-            <img src="img/paw_big.png" alt="">
+            <img src="img/paw-features-bg.png" alt="">
         </div>
         <div class="section-feature-table">
             <div class="section-feature-table__item">
@@ -94,7 +96,7 @@
     
     <!-- ROOMS -->
     <section class="section-rooms">
-        <h1 class="section-rooms-header header-text-main">Номера</h1>
+        <h1 class="section-rooms-header headers-text-main">Номера</h1>
         <div class="section-rooms-fish">
             <img src="img/fish.svg" alt="">
         </div>
@@ -145,10 +147,10 @@
     </section>
     
     <!-- FEEDBACK -->
-    <section class="section-feedback">
-        <h1 class="section-feedback-header header-text-main">Отзывы</h1>
+    <section class="section-feedback" id="feedback-section">
+        <h1 class="section-feedback-header headers-text-main">Отзывы</h1>
         <div class="section-feedback-paw">
-            <img src="img/paw-feedback.svg" alt="">
+            <img src="img/paw-feedback-bg.png" alt="">
         </div>
         <div class="section-feedback-slider">
             <div class="section-feedback-slider-item">
@@ -165,11 +167,11 @@
             </div>
     </section>
 
-    <!-- MAP -->
-    <section class="section-contact">
+    <!-- ADDRESS&MAP -->
+    <section class="section-contact" id="address-section">
         <div class="section-contact-wrapper">
             <div class="section-contact-info">
-                <h1 class="section-contact-info-header header-text-main">Как нас найти</h1>
+                <h1 class="section-contact-info-header headers-text-main">Как нас найти</h1>
                 <h2 class="section-contact-info-title">Адрес</h2>
                 <p class="section-contact-info-subtitle">Санкт-Петербург,<br>ул Большая Конюшенная, д 19</p>
                 <h2 class="section-contact-info-title">Режим работы</h2>
@@ -203,6 +205,8 @@
                 </div>
             </div>
             <div class="section-contact-map">
+                <!-- <h2 class="visually-hidden">Как нас найти</h2> -->
+                <p><img src="img/map_underlay.png" width="798" height="580" alt="Офис компании Большая Конюшенная 19, Санкт-Петербург"></p>
                 <div id="map"></div>
             </div>
         </div>
@@ -216,10 +220,10 @@
             </div>
             <div class="section-footer-menu-nav">
                 <ul>
-                    <li><a href="#" class="section-footer-menu-nav__item">Почему мы?</a></li>
-                    <li><a href="#" class="section-footer-menu-nav__item">Номера</a></li>
-                    <li><a href="#" class="section-footer-menu-nav__item">Отзывы</a></li>
-                    <li><a href="#" class="section-footer-menu-nav__item">Как нас найти</a></li>
+                    <li><a href="#features-section" class="section-footer-menu-nav__item">Почему мы?</a></li>
+                    <li><a href="catalogue.html" class="section-footer-menu-nav__item">Номера</a></li>
+                    <li><a href="#feedback-section" class="section-footer-menu-nav__item">Отзывы</a></li>
+                    <li><a href="#address-section" class="section-footer-menu-nav__item">Как нас найти</a></li>
                 </ul>
             </div>
         </div>
@@ -233,7 +237,6 @@
     </footer>
 
     <!-- MODAL -->
-
     <section class="modal modal-booking">
         <h1 class="modal-booking-description">Забронировать номер</h1>
         <form action="#" method="POST" class="modal-booking-form">
@@ -276,42 +279,11 @@
     <!-- SCRIPTS -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/slick.min.js"></script>
-
-    <script>
-    $(document).ready(function(){
-        $('.section-rooms-slider').slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: '<button class="prev-rooms-arrow arrow"></button>',
-            nextArrow: '<button class="next-rooms-arrow arrow"></button>',
-            dots: true,
-            appendArrows: '.section-rooms-slider',
-            appendDots: '.section-rooms-slider'
-        });
-    });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $('.section-feedback-slider').slick({
-                infinite: true,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                prevArrow: '<button class="prev-feedback-arrow arrow"></button>',
-                nextArrow: '<button class="next-feedback-arrow arrow"></button>',
-                dots: true,
-                dotsClass: 'feedback-dots',
-                centerMode: true,
-                variableWidth: true,
-                appendArrows: '.section-feedback-slider',
-                appendDots: '.section-feedback-slider'
-            });
-        });
-    </script>
-    <!-- ВРЕМЕННО ОТКЛЮЧЕНА КАРТА
+    <script src="js/slider-setting.js"></script>
+    <!-- FIXME ВРЕМЕННО ОТКЛЮЧЕНА КАРТА
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=e56c147b-2892-431e-96b8-99824e33bc1e" type="text/javascript"></script>
-    <script src="js/icon_customImage.js" type="text/javascript"></script>
-    -->
+    <script src="js/icon_customImage.js" type="text/javascript"></script> -->
+   
     <script src="js/modal.js" type="text/javascript"></script>
 </body>
 </html>

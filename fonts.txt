@@ -1,0 +1,4 @@
+Lato:
+semibold
+regular
+medium
