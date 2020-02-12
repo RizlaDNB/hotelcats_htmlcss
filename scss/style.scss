@@ -252,21 +252,27 @@ input[type="radio"].visually-hidden {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
                 flex-direction: column;
-        padding-top: 153px;
+        padding-top: 150px;
         padding-left: 198px;
         &-item1 {
             @include font-Lato-Regular();
             font-size: 14px;
+            margin: 0;
+            padding: 0;
         }
         &-item2 {
             @include font-Rubik();
             font-size: 62px;
             font-weight: bold;
+            margin: 0;
+            padding: 0;
         }
         &-item3 {
             @include font-Lato-Medium();
             font-size: 20px;
-            margin-bottom: 40px;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 35px;
         }
     }
     &-button {
@@ -997,7 +1003,6 @@ input[type="radio"].visually-hidden {
             align-items: center;
     background-color: #FF7236;
     @include font-Lato-Semibold();
-    @include font-main-color();
     color: #FFFEFD;
     font-size: 16px;
     line-height: 19px;
@@ -1037,6 +1042,60 @@ input[type="radio"].visually-hidden {
     -webkit-box-align: center;
             align-items: center;
     margin-bottom: 30px;
+}
+
+.modal-booking-successful {
+    display: none;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 570px;
+    max-width: 100%;
+    height: 269px;
+    max-height: 100%;
+    padding: 70px 70px;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
+    border-radius: 10px;
+    @include font-Lato-Regular();
+    @include font-main-color();
+    text-align: center;
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    h1 {
+        @include font-Rubik();
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    p {
+        @include font-Lato-Regular();
+        margin: 0;
+        margin-bottom: 40px;
+        font-size: 16px;
+    }
+    .button-modal-booking-successful {
+        @include block-center();
+        @include font-Lato-Semibold();
+        font-size: 16px;
+        width: 122px;
+        height: 50px;
+        background: #FF7236;
+        color: #FFFEFD;
+        padding-left: 35px;
+        &::after {
+            content: '';
+            position: relative;
+            right: 7px;
+            width: 36px;
+            height: 36px;
+            background: url(../img/paw_white.png);
+        }
+    }
 }
 
 .modal-close-button {

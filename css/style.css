@@ -182,19 +182,25 @@ input[type="radio"].visually-hidden {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    padding-top: 153px;
+    padding-top: 150px;
     padding-left: 198px; }
     .section-landing-text-item1 {
       font-family: 'Lato Regular', sans-serif;
-      font-size: 14px; }
+      font-size: 14px;
+      margin: 0;
+      padding: 0; }
     .section-landing-text-item2 {
       font-family: 'Rubik', sans-serif;
       font-size: 62px;
-      font-weight: bold; }
+      font-weight: bold;
+      margin: 0;
+      padding: 0; }
     .section-landing-text-item3 {
       font-family: 'Lato Medium', sans-serif;
       font-size: 20px;
-      margin-bottom: 40px; }
+      margin: 0;
+      padding: 0;
+      margin-bottom: 35px; }
   .section-landing-button {
     font-family: 'Lato Semibold', sans-serif;
     font-size: 16px;
@@ -809,7 +815,6 @@ input[type="radio"].visually-hidden {
   align-items: center;
   background-color: #FF7236;
   font-family: 'Lato Semibold', sans-serif;
-  color: #1a212f;
   color: #FFFEFD;
   font-size: 16px;
   line-height: 19px;
@@ -846,6 +851,54 @@ input[type="radio"].visually-hidden {
   -webkit-box-align: center;
   align-items: center;
   margin-bottom: 30px; }
+
+.modal-booking-successful {
+  display: none;
+  top: 72%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 570px;
+  max-width: 100%;
+  height: 269px;
+  max-height: 100%;
+  padding: 70px 70px;
+  box-shadow: 0px 0px 25px #d0d0d0;
+  border-radius: 10px;
+  font-family: 'Lato Regular', sans-serif;
+  color: #1a212f;
+  text-align: center; }
+  .modal-booking-successful img {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  .modal-booking-successful h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 25px;
+    text-align: center; }
+  .modal-booking-successful p {
+    font-family: 'Lato Regular', sans-serif;
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 16px; }
+  .modal-booking-successful .button-modal-booking-successful {
+    margin: 0 auto;
+    font-family: 'Lato Semibold', sans-serif;
+    font-size: 16px;
+    width: 122px;
+    height: 50px;
+    background: #FF7236;
+    color: #FFFEFD;
+    padding-left: 35px; }
+    .modal-booking-successful .button-modal-booking-successful::after {
+      content: '';
+      position: relative;
+      right: 7px;
+      width: 36px;
+      height: 36px;
+      background: url(../img/paw_white.png); }
 
 .modal-close-button {
   position: absolute;
