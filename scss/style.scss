@@ -84,6 +84,7 @@ body {
     border: none;
     box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1);
     border-radius: 25px;
+    transition: 0.3s;
     p {
         display: inline-block;
         margin: 0;
@@ -93,9 +94,7 @@ body {
         margin-right: 5px;
     }
     &:hover {
-        box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.5);
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
+        box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.3);
     }
 }
 
@@ -227,6 +226,10 @@ input[type="radio"].visually-hidden {
             @include font-main-color();
             font-size: 16px;
             text-decoration: none;
+            transition: 0.2s;
+            &:hover, &:focus {
+                color: #FF7236;
+            }
         }
     }
 }
@@ -241,7 +244,7 @@ input[type="radio"].visually-hidden {
     url(../img/kotik2.png);
     background-position: left, center;
     background-repeat: no-repeat, no-repeat;
-    background-size: auto, auto;
+    background-size: initial, auto;
     @include font-main-color();
     &-text {
         display: -webkit-box;
@@ -306,10 +309,10 @@ input[type="radio"].visually-hidden {
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.4);
+            transition: 0.5s;
             margin-bottom: 20px;
             &:hover {
                 box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
-                transition: 0.5s;
             }
             ul {
                 padding: 0px;
@@ -492,7 +495,6 @@ input[type="radio"].visually-hidden {
 }
 
 //FEEDBACK SLIDER DOTS
-
 .feedback-dots
 {
     position: absolute;
@@ -622,6 +624,10 @@ input[type="radio"].visually-hidden {
     }
 }
 
+.section-contact-catalogue {
+    margin-top: 140px;
+}
+
 // FOOTER
 .section-footer {
     &-menu {
@@ -657,6 +663,10 @@ input[type="radio"].visually-hidden {
                 font-size: 16px;
                 line-height: 19px;
                 text-decoration: none;
+                transition: 0.2s;
+                &:hover, &:focus {
+                    color: #FF7236;
+                }
             }
         }
     }
@@ -677,6 +687,236 @@ input[type="radio"].visually-hidden {
         a {
             text-decoration: none;
             @include font-alt-color();
+        }
+    }
+}
+
+// CATALOGUE
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-catalogue {
+    @include block-center();
+    max-width: 1170px;
+    &-header {
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
+    &-filter {
+        min-width: 210px;
+        min-height: 624px;
+        .price-controls input{
+            @include font-Lato-Regular();
+            font-size: 14px;
+            width: 100px;
+            height: 24px;
+            border: 1px solid #E1E1E1;
+            margin-top: 12px;
+            margin-right: 6px;
+            margin-bottom: 32px;
+        }
+        .filter-item {
+            color: #1A212F;
+            margin: 0;
+            padding: 0;
+            border: none;
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            legend {
+                @include font-Lato-Medium();
+                font-size: 16px;
+                padding: 0;
+                span {
+                    @include font-Lato-Regular();
+                    font-size: 14px;
+                }
+            }
+            .filter-option {
+                list-style: none;
+                @include font-Lato-Regular();
+                font-size: 14px;
+                margin-top: 18px;
+                &:nth-child(5) {
+                    margin-bottom: 32px;
+                }
+                .filter-checkbox {
+                    position: relative;
+                    padding-left: 30px;
+                    cursor: pointer;
+                    input[type='checkbox'] + .checkbox-indicator {
+                        position: absolute;
+                        top: -3px;
+                        left: 0;
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #E1E1E1;
+                    }
+                    input[type='checkbox']:checked + .checkbox-indicator::before {
+                        content: '';
+                        position: absolute;
+                        top: 9px;
+                        left: 3px;
+                        width: 6px;
+                        height: 1px;
+                        background-color: black;
+                        transform: rotate(45deg);
+                    }
+                    input[type='checkbox']:checked + .checkbox-indicator::after {
+                        content: '';
+                        position: absolute;
+                        top: 8px;
+                        left: 6px;
+                        width: 9px;
+                        height: 1px;
+                        background-color: black;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        .filter-button {
+            display: inline-block;
+            text-align: center;
+            border: 2px solid #FAC663;
+            font-size: 14px;
+        }
+    }
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 906px;
+        &__item {
+            display: block;
+            border: 1px solid #E1E1E1;
+            box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+            border-radius: 6px;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            width: 272px;
+            min-height: 428px;
+            transition: 0.5s;
+            &:hover {
+                box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
+            }
+            &--title {
+                @include font-Rubik();
+                font-size: 20px;
+                font-weight: 500;
+                margin-left: 20px;
+                margin-bottom: 12px;
+            }
+            &--subtitle {
+                @include font-Lato-Regular();
+                font-size: 14px;
+                margin-left: 20px;
+                margin-top: 0;
+                margin-bottom: 6px;
+                span {
+                    @include font-Lato-Medium();
+                    font-size: 18px;
+                }
+            }
+            &--button {
+                margin: 20px auto;
+                @include font-Lato-Semibold();
+                font-size: 14px;
+                background-color: #FF7236;
+                color: #FFFEFD;
+                height: 46px;
+                padding-left: 40px;
+                &::after {
+                    content: '';
+                    position: relative;
+                    top: 0;
+                    right: 6px;
+                    width: 34px;
+                    height: 34px;
+                    background: url(../img/catalogue/paw-button-white.png) no-repeat center;
+                }
+            }
+        }
+    }
+}
+
+.popup-title {
+    position: relative;
+    margin-left: 5px;
+    &::after {
+        content: attr(data-title);
+        position: absolute; /* Абсолютное позиционирование */
+        left: -55px; top: -50px; /* Положение подсказки */
+        z-index: 1; /* Отображаем подсказку поверх других элементов */
+        background: #FFFFFF;
+        @include font-Lato-Semibold();
+        font-size: 12px; /* Размер текста подсказки */
+        padding: 10px 10px; /* Поля */
+        width: 110px;
+        border: 1px solid #FAC663; /* Параметры рамки */
+        box-shadow: 0px 4px 12px rgba(173, 152, 143, 0.18);
+        text-align: center;
+        word-wrap: unset;
+        text-decoration: none;
+        outline: none;
+        color: #1A212F;
+        border-radius: 4px;
+        display: none;
+    }
+    &:hover::after {
+        display: inline-block;
+        animation: opacity-in 0.5s;
+    }
+}
+
+// PROMO-BLOCK
+.section-promo {
+    @include block-center();
+    max-width: 1170px;
+    min-height: 379px;
+    background: url(../img/catalogue/promo-block-bg.png) no-repeat center;
+    border-radius: 10px;
+    margin-top: 140px;
+    &-paw {
+        position: absolute;
+    }
+    &-block {
+        @include font-main-color();
+        padding-left: 270px;
+        padding-top: 68px;
+        &-title {
+            @include font-Rubik();
+            font-size: 56px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        &-subtitle {
+            @include font-Rubik();
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: -7px;
+        }
+        &-description {
+            @include font-Lato-Regular();
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        &-button {
+            padding-left: 30px;
+            &::after {
+                content: '';
+                position: relative;
+                top: 0;
+                right: 7px;
+                height: 36px;
+                width: 36px;
+                background: url(../img/paw.svg) no-repeat center;
+            }
         }
     }
 }
