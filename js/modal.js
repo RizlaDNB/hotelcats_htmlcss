@@ -3,13 +3,14 @@ var modal = document.querySelector('.modal-booking'),
     modalOpen = document.getElementsByClassName('modal-open-button'),
     modalClose = document.querySelector('.modal-close-button'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
-    modalSucceffulBtn = document.querySelector('.button-modal-booking-successful'),
-    modalSend = document.querySelector('.modal-send-button'), //Убрать позднее
-    form = modal.querySelector('form'),
+    modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
+    modalSend = document.querySelector('.modal-send-button'),
+    form = modal.querySelector('.modal-booking-form'),
+    emptyFieldCheck = modal.querySelectorAll('.field-checker'),
     ownerName = form.querySelector('[name=owner-name]'),
     petName = form.querySelector('[name=pet-name]'),
     phoneNumber = form.querySelector('[name=phone-number]'),
-    email = form.querySelector('[name=email]'),
+    email = form.querySelector('[name=e-mail]'),
     fromDate = form.querySelector('[name=from-date]'),
     toDate = form.querySelector('[name=to-date]');
 
@@ -53,13 +54,23 @@ modalSucceffulCloseBtn.addEventListener('click', function(evt) {
 
 
 //TODO Алерт, в случае если не все поля формы заполнены
-form.addEventListener('submit', function(evt) {
-    evt.preventDefault();
-    console.log('Клик по кнопке');
-    console.log('Имя клиента:');
-    console.log('Имя питомца:');
-    console.log('Телефон:');
-    console.log('E-mail:');
-    console.log('Дата заезда:');
-    console.log('Дата выезда:');
-});
+// form.addEventListener('submit', function(evt) {
+//     evt.preventDefault();
+    
+//     var errors = form.querySelectorAll('.error');
+
+//     for (var i = 0; i < errors.length; i++) {
+//         errors[i].remove();
+//     }
+
+//     for (var i = 0; i < emptyFieldCheck.length; i++) {
+//         if (!emptyFieldCheck[i].value) {
+//             console.log('field is blank', emptyFieldCheck[i]);
+//             var error = document.createElement('div');
+//             error.className = 'error';
+//             error.style.color = 'red';
+//             error.innerHTML = 'Cannot be blank';
+//             form[i].parentElement.insertBefore(error, emptyFieldCheck[i]);
+//         }
+//     }
+// });
