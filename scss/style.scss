@@ -639,7 +639,7 @@ input[type="radio"].visually-hidden {
         }
         .section-contact-map {
             width: 798px;
-            height: 580px;
+            min-height: 580px;
             p {
                 position: absolute;
                 z-index: 1;
