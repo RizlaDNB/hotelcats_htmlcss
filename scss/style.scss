@@ -60,6 +60,10 @@
 
 body {
     background-color: #FFFEFD;
+    max-width: 1366px;
+    @include block-center();
+    overflow-x: hidden;
+    font-size: 16px;
 }
 
 .headers-text-main {
@@ -192,12 +196,17 @@ input[type="radio"].visually-hidden {
 // HEADER
 .section-header {
     @include block-center();
-    max-width: 1170px;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: justify;
             justify-content: space-between;
     align-items: center;
+    padding-left: 98px;
+    padding-right: 98px;
+    @media (max-width: 768px) {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
     &-logo {
         &__link {
             @include font-Lato-Semibold();
@@ -238,38 +247,49 @@ input[type="radio"].visually-hidden {
 .section-landing {
     @include block-center();
     height: 504px;
-    max-width: 1366px;
     background-image:
     url(../img/kotik3.png),
     url(../img/kotik2.png);
-    background-position: left, center;
+    background-position: center, center;
     background-repeat: no-repeat, no-repeat;
-    background-size: initial, auto;
+    background-size: auto, auto;
     @include font-main-color();
+    padding-top: 150px;
+    padding-left: 198px;
+    @media (max-width: 768px) {
+        background-image:
+        url(../img/tablet/landing-mask-bg.png),
+        url(../img/tablet/landing-bg.png);
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto, auto;
+        padding-top: 140px;
+        padding-left: 0;
+        height: 868px;
+        text-align: center;
+    }
     &-text {
         display: -webkit-box;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
                 flex-direction: column;
-        padding-top: 150px;
-        padding-left: 198px;
         &-item1 {
             @include font-Lato-Regular();
-            font-size: 14px;
+            font-size: 0,875rem;
             margin: 0;
             padding: 0;
         }
         &-item2 {
             @include font-Rubik();
-            font-size: 62px;
+            font-size: 3.875rem;
             font-weight: bold;
             margin: 0;
             padding: 0;
         }
         &-item3 {
             @include font-Lato-Medium();
-            font-size: 20px;
+            font-size: 1.25rem;
             margin: 0;
             padding: 0;
             margin-bottom: 35px;
@@ -278,45 +298,54 @@ input[type="radio"].visually-hidden {
     &-button {
         @include font-Lato-Semibold();
         font-size: 16px;
-        margin-left: 198px;
+        @media (max-width: 768px) {
+            @include block-center();
         }
+    }
 }
 
 // FEATURE
 .section-feature {
     @include block-center();
+    max-width: 1170px;
     @include font-Rubik();
     @include font-main-color();
     background-color: #FFFEFD;
-    max-width: 1170px;
     &-header {
         margin-top: 130px;
         margin-bottom: 65px;
         text-align: center;
+        position: relative;
+        z-index: 1;
     }
     &-paw {
         position: absolute;
-        right: 50%;
-        top: 550px;
-        transform: translateX(750px);
+        right: 5%;
+        top: 76%;
         z-index: 0;
+        transform: rotate(-159deg);
+        opacity: 0.15;
     }
     &-table {
         display: -webkit-box;
         display: flex;
         flex-wrap: wrap;
-        -webkit-box-pack: justify;
-                justify-content: space-between;
+        justify-content: center;
         position: relative;
-        z-index: 5;
+        z-index: 1;
         &__item {
-            width: 370px;
-            height: 321px;
+            max-width: 370px;
+            min-height: 321px;
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.4);
             transition: 0.5s;
             margin-bottom: 20px;
+            margin-right: 20px;
+            padding: 30px;
+            @media (max-width: 768px) {
+                max-width: 324px;
+            }
             &:hover {
                 box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
             }
@@ -324,23 +353,22 @@ input[type="radio"].visually-hidden {
                 padding: 0px;
                 margin: 0px;
                 li {
-                    margin-left: 30px;
                     list-style: none;
+                    margin-bottom: 20px;
                     img {
-                        margin-top: 30px;
-                        margin-bottom: 35px;
+                        
                     }
                     &.item-title {
                         font-size: 22px;
-                        line-height: 120%;
+                        line-height: 25px;
                         font-weight: normal;
-                        margin-bottom: 20px;
                     }
                     &.item-text {
                         @include font-Lato-Regular();
                         font-size: 16px;
-                        line-height: 140%;
+                        line-height: 22px;
                         max-width: 317px;
+                        margin-bottom: 0;
                     }
                 }
             }    
@@ -569,17 +597,16 @@ input[type="radio"].visually-hidden {
     margin-top: 190px;
     &-wrapper {
         @include block-center();
-        max-width: 1366px;
         display: -webkit-box;
         display: flex;
         -webkit-box-pack: justify;
                 justify-content: space-between;
         background-color: #FAC663;
+        padding-left: 198px;
         .section-contact-info {
             @include font-Lato-Regular();
             @include font-main-color();
             background-color: #FAC663;
-            margin-left: 198px;
             &-header {
                 @include font-Rubik();
                 font-weight: bold;
@@ -638,7 +665,6 @@ input[type="radio"].visually-hidden {
 .section-footer {
     &-menu {
     @include block-center();
-    max-width: 970px;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: justify;
@@ -646,6 +672,12 @@ input[type="radio"].visually-hidden {
     -webkit-box-align: center;
             align-items: center;
     border-bottom: 1px solid #EFEFEF;
+    padding-left: 198px;
+    padding-right: 198px;
+    @media (max-width: 768px) {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
         &-logo {
             margin-top: 12px;
             margin-bottom: 12px;
@@ -678,18 +710,23 @@ input[type="radio"].visually-hidden {
     }
     &-copyrights {
         @include block-center();
-        max-width: 970px;
         display: -webkit-box;
         display: flex;
         -webkit-box-pack: justify;
                 justify-content: space-between;
         margin-top: 20px;
         margin-bottom: 20px;
+        padding-left: 198px;
+        padding-right: 198px;
         @include font-Lato-Regular();
         @include font-alt-color();
         font-weight: normal;
         font-size: 12px;
         line-height: 14px;
+        @media (max-width: 768px) {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
         a {
             text-decoration: none;
             @include font-alt-color();
@@ -937,7 +974,7 @@ input[type="radio"].visually-hidden {
 
 .modal-booking {
     display: none;
-    top: 2%;
+    top: 20px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -982,13 +1019,13 @@ input[type="radio"].visually-hidden {
         }
         input[type='date'] {
             box-sizing: border-box;
-            width: 129px;
+            min-width: 129px;
             padding: 15px 0;
+            padding-left: 10px;
             border-radius: 25px;
             border: 1px solid #D7D7D7;
             font: inherit;
             @include font-alt-color();
-            padding-left: 15px;
         }
     }
 }
@@ -1046,7 +1083,7 @@ input[type="radio"].visually-hidden {
 
 .modal-booking-successful {
     display: none;
-    top: 72%;
+    top: 690px;
     left: 50%;
     transform: translateX(-50%);
     width: 570px;
@@ -1138,8 +1175,8 @@ input[type="radio"].visually-hidden {
             animation-duration: 0.5s;
 }
 
-// ANIMATION
 
+// ANIMATION
 @-webkit-keyframes opacity-in {
     0% {opacity: 0;}
     100% {opacity: 1;}

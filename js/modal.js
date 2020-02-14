@@ -1,12 +1,13 @@
-var modal = document.querySelector('.modal-booking'),
+var modal = document.querySelector('.modal'),
+    modalBooking = document.querySelector('.modal-booking'),
     modalOverlay = document.querySelector('.modal-overlay'),
     modalOpen = document.getElementsByClassName('modal-open-button'),
     modalClose = document.querySelector('.modal-close-button'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
     modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
     modalSend = document.querySelector('.modal-send-button'),
-    form = modal.querySelector('.modal-booking-form'),
-    emptyFieldCheck = modal.querySelectorAll('.field-checker'),
+    form = modalBooking.querySelector('.modal-booking-form'),
+    emptyFieldCheck = form.querySelectorAll('.field-checker'),
     ownerName = form.querySelector('[name=owner-name]'),
     petName = form.querySelector('[name=pet-name]'),
     phoneNumber = form.querySelector('[name=phone-number]'),
@@ -19,7 +20,7 @@ var modal = document.querySelector('.modal-booking'),
 for (var i = 0; i < modalOpen.length; i++) {
         modalOpen[i].addEventListener('click', function(evt) {
             evt.preventDefault();
-            modal.classList.add('modal-show');
+            modalBooking.classList.add('modal-show');
             modalOverlay.classList.add('modal-show');
             ownerName.focus();
         })  
@@ -29,7 +30,7 @@ for (var i = 0; i < modalOpen.length; i++) {
 //Закрытие модалки по крестику
 modalClose.addEventListener('click', function(evt) {
     evt.preventDefault();
-    modal.classList.remove('modal-show');
+    modalBooking.classList.remove('modal-show');
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
 });
@@ -38,7 +39,7 @@ modalClose.addEventListener('click', function(evt) {
 //Закрытие модалки по клику в оверлей
 modalOverlay.addEventListener('click', function(evt) {
     evt.preventDefault();
-    modal.classList.remove('modal-show');
+    modalBooking.classList.remove('modal-show');
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
 });
@@ -47,30 +48,38 @@ modalOverlay.addEventListener('click', function(evt) {
 //Закрытие модалки по клику на кнопку "ОК"
 modalSucceffulCloseBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
-    modal.classList.remove('modal-show');
+    modalBooking.classList.remove('modal-show');
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
 });
 
 
+//Временный функционал отправки формы
+modalSend.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    modalSuccefful.classList.add('modal-show');
+});
+
 //TODO Алерт, в случае если не все поля формы заполнены
 // form.addEventListener('submit', function(evt) {
 //     evt.preventDefault();
-    
-//     var errors = form.querySelectorAll('.error');
-
-//     for (var i = 0; i < errors.length; i++) {
-//         errors[i].remove();
-//     }
-
 //     for (var i = 0; i < emptyFieldCheck.length; i++) {
 //         if (!emptyFieldCheck[i].value) {
+//             evt.preventDefault();
 //             console.log('field is blank', emptyFieldCheck[i]);
-//             var error = document.createElement('div');
-//             error.className = 'error';
-//             error.style.color = 'red';
-//             error.innerHTML = 'Cannot be blank';
-//             form[i].parentElement.insertBefore(error, emptyFieldCheck[i]);
 //         }
+//         else {
+//             evt.preventDefault();
+//             modalSuccefful.classList.add('modal-show');
+//             modalSucceffulCloseBtn.focus();
+//         }
+//     }
+// });
+
+// email.addEventListener("input", function (event) {
+//     if (email.validity.typeMismatch) {
+//       email.setCustomValidity("I expect an e-mail, darling!");
+//     } else {
+//       email.setCustomValidity("");
 //     }
 // });
