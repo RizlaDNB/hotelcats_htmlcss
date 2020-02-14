@@ -53,6 +53,14 @@
     margin: 0 auto;
 }
 
+// VARIABLES
+$xs: (max-width: 575.98px);
+$sm: (min-width: 576px) and (max-width: 767.98px);
+$md: (min-width: 768px) and (max-width: 991.98px);
+$lg: (min-width: 992px) and (max-width: 1199.98px);
+$xl: (min-width: 1200px);
+
+
 // GLOBALS
 * {
     box-sizing: border-box;
@@ -327,6 +335,7 @@ input[type="radio"].visually-hidden {
         opacity: 0.15;
     }
     &-table {
+        margin: 0 auto;
         display: -webkit-box;
         display: flex;
         flex-wrap: wrap;
@@ -603,6 +612,12 @@ input[type="radio"].visually-hidden {
                 justify-content: space-between;
         background-color: #FAC663;
         padding-left: 198px;
+        @media (max-width: 1260px) {
+            padding-left: 98px;
+        }
+        @media (max-width: 1156px) {
+            padding-left: 45px;
+        }
         .section-contact-info {
             @include font-Lato-Regular();
             @include font-main-color();
@@ -612,22 +627,30 @@ input[type="radio"].visually-hidden {
                 font-weight: bold;
                 font-size: 36px;
                 line-height: 43px;
-                margin-bottom: 50px;
+                margin-top: 60px;
+                margin-bottom: 40px;
+                @media (max-width: 1156px) {
+                    margin-top: 25px;
+                }
             }
             &-title {
                 @include font-Lato-Bold();
-                margin: 0;
-                margin-top: 35px;
+                margin-bottom: 10px;
                 font-size: 16px;
                 line-height: 19px;
-                font-weight: 600;
+                @media (max-width: 786px) {
+                    font-size: 15px;
+                }
             }
             &-subtitle {
                 margin: 0px;
-                margin-top: 15px;
+                margin-bottom: 25px;
                 font-size: 16px;
                 line-height: 19px;
                 font-weight: normal;
+                @media (max-width: 786px) {
+                    font-size: 15px;
+                }
             }
             &-social {
                 margin-top: 15px;
@@ -640,10 +663,12 @@ input[type="radio"].visually-hidden {
         .section-contact-map {
             width: 798px;
             min-height: 580px;
-            p {
-                position: absolute;
-                z-index: 1;
-                margin: 0;
+            background: url(../img/map_underlay.png) no-repeat center;
+            @media (max-width: 1156px) {
+                width: 650px;
+            }
+            @media (max-width: 786px) {
+                width: 399px;
             }
             #map {
                 position: relative;
@@ -674,6 +699,10 @@ input[type="radio"].visually-hidden {
     border-bottom: 1px solid #EFEFEF;
     padding-left: 198px;
     padding-right: 198px;
+    @media (max-width: 1260px) {
+        padding-left: 98px;
+        padding-right: 98px;
+    }
     @media (max-width: 768px) {
         padding-left: 45px;
         padding-right: 45px;
@@ -723,6 +752,10 @@ input[type="radio"].visually-hidden {
         font-weight: normal;
         font-size: 12px;
         line-height: 14px;
+        @media (max-width: 1260px) {
+            padding-left: 98px;
+            padding-right: 98px;
+        }
         @media (max-width: 768px) {
             padding-left: 45px;
             padding-right: 45px;

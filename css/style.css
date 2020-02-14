@@ -246,6 +246,7 @@ input[type="radio"].visually-hidden {
     transform: rotate(-159deg);
     opacity: 0.15; }
   .section-feature-table {
+    margin: 0 auto;
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
@@ -475,6 +476,12 @@ input[type="radio"].visually-hidden {
     justify-content: space-between;
     background-color: #FAC663;
     padding-left: 198px; }
+    @media (max-width: 1260px) {
+      .section-contact-wrapper {
+        padding-left: 98px; } }
+    @media (max-width: 1156px) {
+      .section-contact-wrapper {
+        padding-left: 45px; } }
     .section-contact-wrapper .section-contact-info {
       font-family: 'Lato Regular', sans-serif;
       color: #1a212f;
@@ -484,20 +491,28 @@ input[type="radio"].visually-hidden {
         font-weight: bold;
         font-size: 36px;
         line-height: 43px;
-        margin-bottom: 50px; }
+        margin-top: 60px;
+        margin-bottom: 40px; }
+        @media (max-width: 1156px) {
+          .section-contact-wrapper .section-contact-info-header {
+            margin-top: 25px; } }
       .section-contact-wrapper .section-contact-info-title {
         font-family: 'Lato Bold', sans-serif;
-        margin: 0;
-        margin-top: 35px;
+        margin-bottom: 10px;
         font-size: 16px;
-        line-height: 19px;
-        font-weight: 600; }
+        line-height: 19px; }
+        @media (max-width: 786px) {
+          .section-contact-wrapper .section-contact-info-title {
+            font-size: 15px; } }
       .section-contact-wrapper .section-contact-info-subtitle {
         margin: 0px;
-        margin-top: 15px;
+        margin-bottom: 25px;
         font-size: 16px;
         line-height: 19px;
         font-weight: normal; }
+        @media (max-width: 786px) {
+          .section-contact-wrapper .section-contact-info-subtitle {
+            font-size: 15px; } }
       .section-contact-wrapper .section-contact-info-social {
         margin-top: 15px; }
         .section-contact-wrapper .section-contact-info-social a {
@@ -505,11 +520,14 @@ input[type="radio"].visually-hidden {
           font-size: 0px; }
     .section-contact-wrapper .section-contact-map {
       width: 798px;
-      min-height: 580px; }
-      .section-contact-wrapper .section-contact-map p {
-        position: absolute;
-        z-index: 1;
-        margin: 0; }
+      min-height: 580px;
+      background: url(../img/map_underlay.png) no-repeat center; }
+      @media (max-width: 1156px) {
+        .section-contact-wrapper .section-contact-map {
+          width: 650px; } }
+      @media (max-width: 786px) {
+        .section-contact-wrapper .section-contact-map {
+          width: 399px; } }
       .section-contact-wrapper .section-contact-map #map {
         position: relative;
         z-index: 2;
@@ -532,6 +550,10 @@ input[type="radio"].visually-hidden {
   border-bottom: 1px solid #EFEFEF;
   padding-left: 198px;
   padding-right: 198px; }
+  @media (max-width: 1260px) {
+    .section-footer-menu {
+      padding-left: 98px;
+      padding-right: 98px; } }
   @media (max-width: 768px) {
     .section-footer-menu {
       padding-left: 45px;
@@ -574,6 +596,10 @@ input[type="radio"].visually-hidden {
   font-weight: normal;
   font-size: 12px;
   line-height: 14px; }
+  @media (max-width: 1260px) {
+    .section-footer-copyrights {
+      padding-left: 98px;
+      padding-right: 98px; } }
   @media (max-width: 768px) {
     .section-footer-copyrights {
       padding-left: 45px;
