@@ -96,6 +96,7 @@ body {
     border: none;
     box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1);
     border-radius: 25px;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     p {
         display: inline-block;
@@ -170,6 +171,7 @@ input[type="radio"].visually-hidden {
     border-radius: 50%;
     box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1);
     cursor: pointer;
+    -webkit-transition: 0.08s;
     transition: 0.08s;
     &:hover {
         border: 2px solid #FF7236;
@@ -238,7 +240,8 @@ input[type="radio"].visually-hidden {
     display: flex;
     -webkit-box-pack: justify;
             justify-content: space-between;
-    align-items: center;
+    -webkit-box-align: center;
+            align-items: center;
     padding-left: 98px;
     padding-right: 98px;
     @media (max-width: 768px) {
@@ -273,6 +276,7 @@ input[type="radio"].visually-hidden {
             @include font-main-color();
             font-size: 16px;
             text-decoration: none;
+            -webkit-transition: 0.2s;
             transition: 0.2s;
             &:hover, &:focus {
                 color: #FF7236;
@@ -388,7 +392,8 @@ input[type="radio"].visually-hidden {
         right: 5%;
         top: 76%;
         z-index: 0;
-        transform: rotate(-159deg);
+        -webkit-transform: rotate(-159deg);
+                transform: rotate(-159deg);
         opacity: 0.15;
     }
     &-table {
@@ -396,7 +401,8 @@ input[type="radio"].visually-hidden {
         display: -webkit-box;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        -webkit-box-pack: center;
+                justify-content: center;
         position: relative;
         z-index: 1;
         &__item {
@@ -405,6 +411,7 @@ input[type="radio"].visually-hidden {
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.4);
+            -webkit-transition: 0.5s;
             transition: 0.5s;
             margin-bottom: 20px;
             margin-right: 20px;
@@ -477,7 +484,8 @@ input[type="radio"].visually-hidden {
     &-fish {
         position: absolute;
         left: 50%;
-        transform: translateX(-684px);
+        -webkit-transform: translateX(-684px);
+                transform: translateX(-684px);
         top: 1626px;
         z-index: 0;
     }
@@ -635,7 +643,8 @@ input[type="radio"].visually-hidden {
     &-paw {
         position: absolute;
         right: 50%;
-        transform: translateX(780px);
+        -webkit-transform: translateX(780px);
+                transform: translateX(780px);
         top: 2250px;
         z-index: 0;
     }
@@ -951,8 +960,10 @@ input[type="radio"].visually-hidden {
                 @media #{$xs} {
                     margin: 0;
                     padding: 0;
+                    display: -webkit-box;
                     display: flex;
-                    justify-content: space-between;
+                    -webkit-box-pack: justify;
+                            justify-content: space-between;
                     flex-wrap: wrap;
                 }
             }
@@ -976,6 +987,7 @@ input[type="radio"].visually-hidden {
                 font-size: 16px;
                 line-height: 19px;
                 text-decoration: none;
+                -webkit-transition: 0.2s;
                 transition: 0.2s;
                 &:hover, &:focus {
                     color: #FF7236;
@@ -1011,8 +1023,11 @@ input[type="radio"].visually-hidden {
             padding-right: 15px;
         }
         @media #{$xs} {
-            flex-direction: column;
-            justify-content: baseline;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                    flex-direction: column;
+            -webkit-box-pack: baseline;
+                    justify-content: baseline;
             margin-top: 15px;
         }
         a {
@@ -1027,8 +1042,10 @@ input[type="radio"].visually-hidden {
 
 // CATALOGUE
 .container {
+    display: -webkit-box;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
 }
 
 .section-catalogue {
@@ -1097,7 +1114,8 @@ input[type="radio"].visually-hidden {
                         width: 6px;
                         height: 1px;
                         background-color: black;
-                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                                transform: rotate(45deg);
                     }
                     input[type='checkbox']:checked + .checkbox-indicator::after {
                         content: '';
@@ -1107,7 +1125,8 @@ input[type="radio"].visually-hidden {
                         width: 9px;
                         height: 1px;
                         background-color: black;
-                        transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
                     }
                 }
             }
@@ -1120,6 +1139,7 @@ input[type="radio"].visually-hidden {
         }
     }
     &-items {
+        display: -webkit-box;
         display: flex;
         flex-wrap: wrap;
         max-width: 906px;
@@ -1132,6 +1152,7 @@ input[type="radio"].visually-hidden {
             margin-bottom: 30px;
             width: 272px;
             min-height: 428px;
+            -webkit-transition: 0.5s;
             transition: 0.5s;
             &:hover {
                 box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
@@ -1201,7 +1222,8 @@ input[type="radio"].visually-hidden {
     }
     &:hover::after {
         display: inline-block;
-        animation: opacity-in 0.5s;
+        -webkit-animation: opacity-in 0.5s;
+                animation: opacity-in 0.5s;
     }
 }
 
@@ -1376,7 +1398,8 @@ input[type="radio"].visually-hidden {
     display: none;
     top: 690px;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     width: 570px;
     max-width: 100%;
     height: 269px;
