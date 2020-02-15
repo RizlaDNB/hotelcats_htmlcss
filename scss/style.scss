@@ -70,7 +70,6 @@ body {
     background-color: #FFFEFD;
     max-width: 1366px;
     @include block-center();
-    overflow-x: hidden;
 }
 
 .headers-text-main {
@@ -309,7 +308,6 @@ input[type="radio"].visually-hidden {
         url(../img/tablet/landing-bg.png);
         background-position: center, center;
         background-repeat: no-repeat, no-repeat;
-        //background-size: contain contain;
         padding-top: 140px;
         padding-left: 0;
         height: 868px;
@@ -376,6 +374,9 @@ input[type="radio"].visually-hidden {
     @include font-main-color();
     background-color: #FFFEFD;
     position: relative;
+    @media (min-width: 1366px) {
+        overflow: hidden;
+    }
     &-header {
         margin-top: 130px;
         margin-bottom: 65px;
@@ -390,7 +391,7 @@ input[type="radio"].visually-hidden {
     &-paw {
         position: absolute;
         right: -70px;
-        top: -100px;
+        top: 20px;
         z-index: 0;
         -webkit-transform: rotate(-159deg);
                 transform: rotate(-159deg);
@@ -626,6 +627,9 @@ input[type="radio"].visually-hidden {
 // FEEDBACK
 .section-feedback {
     position: relative;
+    @media (min-width: 1366px) {
+        overflow: hidden;
+    }
     &-header {
         text-align: center;
         margin-top: 220px;
