@@ -6,6 +6,7 @@ $(document).ready(function(){
         prevArrow: '<button class="prev-rooms-arrow arrow"></button>',
         nextArrow: '<button class="next-rooms-arrow arrow"></button>',
         dots: true,
+        centered: true,
         appendArrows: '.section-rooms-slider',
         appendDots: '.section-rooms-slider'
     });
