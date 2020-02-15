@@ -372,10 +372,11 @@ input[type="radio"].visually-hidden {
 // FEATURE
 .section-feature {
     @include block-center();
-    max-width: 1170px;
+    max-width: 1366px;
     @include font-Rubik();
     @include font-main-color();
     background-color: #FFFEFD;
+    position: relative;
     &-header {
         margin-top: 130px;
         margin-bottom: 65px;
@@ -389,8 +390,8 @@ input[type="radio"].visually-hidden {
     }
     &-paw {
         position: absolute;
-        right: 5%;
-        top: 76%;
+        right: -70px;
+        top: -100px;
         z-index: 0;
         -webkit-transform: rotate(-159deg);
                 transform: rotate(-159deg);
@@ -471,7 +472,8 @@ input[type="radio"].visually-hidden {
 // ROOMS
 .section-rooms {
     @include block-center();
-    max-width: 1170px;
+    max-width: 1366px;
+    position: relative;
     &-header {
         margin-top: 120px;
         margin-bottom: 60px;
@@ -483,10 +485,8 @@ input[type="radio"].visually-hidden {
     }
     &-fish {
         position: absolute;
-        left: 50%;
-        -webkit-transform: translateX(-684px);
-                transform: translateX(-684px);
-        top: 1626px;
+        left: 0;
+        top: 0;
         z-index: 0;
     }
     &-slider {
@@ -498,15 +498,11 @@ input[type="radio"].visually-hidden {
             max-width: 705px;
         }
         @media #{$xs} {
-            max-width: 340px;
+            max-width: 290px;
         }
         &-item {
             position: relative;
             z-index: 1;
-            @media #{$xs} {
-                margin-left: 25px;
-                margin-bottom: 25px;
-            }
             &__image {
                 border-radius: 10px;
                 width: 600px;
@@ -558,6 +554,7 @@ input[type="radio"].visually-hidden {
                     width: 290px;
                     height: 252px;
                     padding: 25px;
+                    box-shadow: none;
                 }
                 h3 {
                     @include font-Rubik();
@@ -629,6 +626,7 @@ input[type="radio"].visually-hidden {
 
 // FEEDBACK
 .section-feedback {
+    position: relative;
     &-header {
         text-align: center;
         margin-top: 220px;
@@ -642,10 +640,10 @@ input[type="radio"].visually-hidden {
     }
     &-paw {
         position: absolute;
-        right: 50%;
-        -webkit-transform: translateX(780px);
-                transform: translateX(780px);
-        top: 2250px;
+        right: -70px;
+        top: -100px;
+        transform: rotate(142deg);
+        opacity: 0.15;
         z-index: 0;
     }
     &-slider {
@@ -1300,10 +1298,18 @@ input[type="radio"].visually-hidden {
     border-radius: 10px;
     @include font-Lato-Regular();
     @include font-main-color();
-    img {
+    overflow: hidden;
+    &-paw {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -20px;
+        left: -25px;
+        width: 137px;
+        height: 117px;
+        transform: rotate(-35deg);
+        opacity: 0.15;
+        img {
+            width: 100%;
+        }
     }
     h1 {
         @include font-Rubik();
@@ -1410,10 +1416,18 @@ input[type="radio"].visually-hidden {
     @include font-Lato-Regular();
     @include font-main-color();
     text-align: center;
-    img {
+    overflow: hidden;
+    &-paw {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 0px;
+        left: -15px;
+        width: 137px;
+        height: 117px;
+        transform: rotate(-145deg);
+        opacity: 0.15;
+        img {
+            width: 100%;
+        }
     }
     h1 {
         @include font-Rubik();
