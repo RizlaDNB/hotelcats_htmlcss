@@ -2,7 +2,7 @@ var modal = document.querySelector('.modal'),
     modalBooking = document.querySelector('.modal-booking'),
     modalOverlay = document.querySelector('.modal-overlay'),
     modalOpen = document.getElementsByClassName('modal-open-button'),
-    modalClose = document.querySelector('.modal-close-button'),
+    modalClose = document.querySelectorAll('.modal-close-button'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
     modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
     modalSend = document.querySelector('.modal-send-button'),
@@ -28,12 +28,14 @@ for (var i = 0; i < modalOpen.length; i++) {
 
 
 //Закрытие модалки по крестику
-modalClose.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    modalBooking.classList.remove('modal-show');
-    modalOverlay.classList.remove('modal-show');
-    modalSuccefful.classList.remove('modal-show');
-});
+for (var i = 0; i < modalClose.length; i++) {
+    modalClose[i].addEventListener('click', function(evt) {
+        evt.preventDefault();
+        modalBooking.classList.remove('modal-show');
+        modalOverlay.classList.remove('modal-show');
+        modalSuccefful.classList.remove('modal-show');
+    })  
+};
 
 
 //Закрытие модалки по клику в оверлей
