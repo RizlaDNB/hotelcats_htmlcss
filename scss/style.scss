@@ -242,9 +242,13 @@ input[type="radio"].visually-hidden {
             align-items: center;
     padding-left: 98px;
     padding-right: 98px;
-    @media (max-width: 768px) {
+    @media #{$md} {
         padding-left: 45px;
         padding-right: 45px;
+    }
+    @media #{$sm}, #{$xs} {
+        padding-left: 15px;
+        padding-right: 15px;
     }
     &-logo {
         &__link {
@@ -374,9 +378,7 @@ input[type="radio"].visually-hidden {
     @include font-main-color();
     background-color: #FFFEFD;
     position: relative;
-    @media (min-width: 1366px) {
-        overflow: hidden;
-    }
+    overflow: hidden;
     &-header {
         margin-top: 130px;
         margin-bottom: 65px;
@@ -391,11 +393,26 @@ input[type="radio"].visually-hidden {
     &-paw {
         position: absolute;
         right: -70px;
-        top: 20px;
+        top: 30px;
         z-index: 0;
         -webkit-transform: rotate(-159deg);
                 transform: rotate(-159deg);
         opacity: 0.15;
+        width: 367px;
+        height: 314px;
+        img {
+            width: 100%;
+        }
+        @media #{$sm} {
+            width: 300px;
+            height: 257px;
+        }
+        @media #{$xs} {
+            width: 116px;
+            height: 99px;
+            right: -25px;
+            top: 65px;
+        }
     }
     &-table {
         margin: 0 auto;
@@ -488,6 +505,20 @@ input[type="radio"].visually-hidden {
         left: 0;
         top: 0;
         z-index: 0;
+        width: 484px;
+        height: 151px;
+        img {
+            width: 100%;
+        }
+        @media #{$sm} {
+            width: 339px;
+            height: 106px;
+        }
+        @media #{$xs} {
+            width: 150px;
+            height: 46px;
+            top: 50px;
+        }
     }
     &-slider {
         margin-top: 70px;
@@ -627,9 +658,7 @@ input[type="radio"].visually-hidden {
 // FEEDBACK
 .section-feedback {
     position: relative;
-    @media (min-width: 1366px) {
-        overflow: hidden;
-    }
+    overflow: hidden;
     &-header {
         text-align: center;
         margin-top: 220px;
@@ -648,6 +677,22 @@ input[type="radio"].visually-hidden {
         transform: rotate(142deg);
         opacity: 0.15;
         z-index: 0;
+        width: 312px;
+        height: 267px;
+        img {
+            width: 100%;
+        }
+        @media #{$sm} {
+            height: 194px;
+            width: 227px;
+            right: -20px;
+            top: 140px;
+        }
+        @media #{$xs} {
+            width: 112px;
+            height: 95px;
+            top: 110px;
+        }
     }
     &-slider {
         @include block-center();
