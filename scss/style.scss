@@ -139,6 +139,7 @@ input[type="radio"].visually-hidden {
 .slick-dots {
         top: 447px;
         cursor: pointer;
+        z-index: 4;
         @media (max-width: 1120px) {
             top: 365px;
         }
@@ -264,6 +265,7 @@ input[type="radio"].visually-hidden {
         opacity: 0;
         -webkit-transition: 0.1s;
         transition: 0.1s;
+        display: none;
     }
     @media #{$md} {
         padding-left: 45px;
