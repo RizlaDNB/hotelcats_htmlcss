@@ -263,56 +263,57 @@
     </footer>
 
     <!-- MODAL -->
-    <section class="modal modal-booking">
-        <h1 class="modal-booking-description">Забронировать номер</h1>
-        <form action="#" method="POST" class="modal-booking-form" id="modal-booking-form">
-            <p>
-                <label class="visually-hidden" for="owner-name">Ваше имя</label>
-                <input class="modal-input field-checker" id="owner-name" type="text" name="owner-name" placeholder="Ваше имя">
-            </p>
-            <p>
-                <label class="visually-hidden" for="pet-name">Имя Питомца</label>
-                <input class="modal-input field-checker" id="pet-name" type="text" name="pet-name" placeholder="Имя Питомца">
-            </p>
-            <p>
-                <label class="visually-hidden" for="phone-number">Телефон</label>
-                <input class="modal-input field-checker" id="phone-number" type="text" name="phone-number" placeholder="Телефон">
-            </p>
-            <p>
-                <label class="visually-hidden" for="e-mail">E-mail</label>
-                <input class="modal-input field-checker" id="e-mail" type="text" name="e-mail" placeholder="E-mail">
-            </p>
-            <div class="form-date-wrapper">
-            <p>Дата заезда</p>
-            <p>с</p>
-            <p>
-                <label class="visually-hidden" for="from-date">С какой даты</label>
-                <input class="modal-input modal-date-input field-checker" id="from-date" type="date" name="from-date">
-            </p>
-            <p>по</p>
-            <p>
-                <label class="visually-hidden" for="to-date">По какую дату</label>
-                <input class="modal-input modal-date-input field-checker" id="to-date" type="date" name="to-date">
-            </p>
+    <div class="modal-wrapper">
+        <section class="modal modal-booking">
+            <h1 class="modal-booking-description">Забронировать номер</h1>
+            <form action="#" method="POST" class="modal-booking-form" id="modal-booking-form">
+                <p>
+                    <label class="visually-hidden" for="owner-name">Ваше имя</label>
+                    <input class="modal-input field-checker" id="owner-name" type="text" name="owner-name" placeholder="Ваше имя">
+                </p>
+                <p>
+                    <label class="visually-hidden" for="pet-name">Имя Питомца</label>
+                    <input class="modal-input field-checker" id="pet-name" type="text" name="pet-name" placeholder="Имя Питомца">
+                </p>
+                <p>
+                    <label class="visually-hidden" for="phone-number">Телефон</label>
+                    <input class="modal-input field-checker" id="phone-number" type="text" name="phone-number" placeholder="Телефон">
+                </p>
+                <p>
+                    <label class="visually-hidden" for="e-mail">E-mail</label>
+                    <input class="modal-input field-checker" id="e-mail" type="text" name="e-mail" placeholder="E-mail">
+                </p>
+                <div class="form-date-wrapper">
+                <p>Дата заезда</p>
+                <p>с</p>
+                <p>
+                    <label class="visually-hidden" for="from-date">С какой даты</label>
+                    <input class="modal-input modal-date-input field-checker" id="from-date" type="date" name="from-date">
+                </p>
+                <p>по</p>
+                <p>
+                    <label class="visually-hidden" for="to-date">По какую дату</label>
+                    <input class="modal-input modal-date-input field-checker" id="to-date" type="date" name="to-date">
+                </p>
+                </div>
+                <button class="modal-send-button" type="submit" form="modal-booking-form">Отправить заявку</button>
+            </form>
+            <div class="modal-booking-paw">
+                <img src="img/paw_test.svg" alt="">
             </div>
-            <button class="modal-send-button" type="submit" form="modal-booking-form">Отправить заявку</button>
-        </form>
-        <div class="modal-booking-paw">
-            <img src="img/paw_test.svg" alt="">
-        </div>
-        <button class="modal-close-button" type="button">Закрыть</button>
-    </section>
-    <section class="modal modal-booking-successful">
-        <h1>Спасибо за заявку!</h1>
-        <p>Мы свяжемся с вами в ближайшее время</p>
-        <a href="#" class="button-main button-modal-booking-successful">Ок</a>
-        <div class="modal-booking-successful-paw">
-            <img src="img/paw_test.svg" alt="">
-        </div>
-        <button class="modal-close-button" type="button">Закрыть</button>
-    </section>
-    <div class="modal-overlay"></div>
-
+            <button class="modal-close-button" type="button">Закрыть</button>
+        </section>
+        <section class="modal modal-booking-successful">
+            <h1>Спасибо за заявку!</h1>
+            <p>Мы свяжемся с вами в ближайшее время</p>
+            <a href="#" class="button-main button-modal-booking-successful">Ок</a>
+            <div class="modal-booking-successful-paw">
+                <img src="img/paw_test.svg" alt="">
+            </div>
+            <button class="modal-close-button" type="button">Закрыть</button>
+        </section>
+        <div class="modal-overlay"></div>
+    </div>
     <!-- SCRIPTS -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/slick.min.js"></script>

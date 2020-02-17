@@ -1,4 +1,5 @@
-var modal = document.querySelector('.modal'),
+var body = document.querySelector('body'),
+    modalWrapper = document.querySelector('.modal-wrapper'),
     modalBooking = document.querySelector('.modal-booking'),
     modalOverlay = document.querySelector('.modal-overlay'),
     modalOpen = document.getElementsByClassName('modal-open-button'),
@@ -20,8 +21,10 @@ var modal = document.querySelector('.modal'),
 for (var i = 0; i < modalOpen.length; i++) {
         modalOpen[i].addEventListener('click', function(evt) {
             evt.preventDefault();
+            modalWrapper.classList.add('modal-show');
             modalBooking.classList.add('modal-show');
             modalOverlay.classList.add('modal-show');
+            body.classList.add('scroll-lock');
             ownerName.focus();
         })  
 };
@@ -34,6 +37,8 @@ for (var i = 0; i < modalClose.length; i++) {
         modalBooking.classList.remove('modal-show');
         modalOverlay.classList.remove('modal-show');
         modalSuccefful.classList.remove('modal-show');
+        modalWrapper.classList.remove('modal-show');
+        body.classList.remove('scroll-lock');
     })  
 };
 
@@ -44,6 +49,8 @@ modalOverlay.addEventListener('click', function(evt) {
     modalBooking.classList.remove('modal-show');
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
+    modalWrapper.classList.remove('modal-show');
+    body.classList.remove('scroll-lock');
 });
 
 
@@ -53,6 +60,8 @@ modalSucceffulCloseBtn.addEventListener('click', function(evt) {
     modalBooking.classList.remove('modal-show');
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
+    modalWrapper.classList.remove('modal-show');
+    body.classList.remove('scroll-lock');
 });
 
 
@@ -60,6 +69,7 @@ modalSucceffulCloseBtn.addEventListener('click', function(evt) {
 modalSend.addEventListener('click', function(evt) {
     evt.preventDefault();
     modalSuccefful.classList.add('modal-show');
+    modalSucceffulCloseBtn.focus();
 });
 
 //TODO Алерт, в случае если не все поля формы заполнены

@@ -129,10 +129,8 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-.body-lock {
-    @media #{$xs} {
-        overflow: hidden;
-    }
+.scroll-lock {
+    overflow: hidden;
 }
 
 // SLIDER-CONTROLS
@@ -277,15 +275,8 @@ input[type="radio"].visually-hidden {
     }
     &-active {
         &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #FAC663;
-            z-index: 4;
             opacity: 1;
+            display: block;
         }
     }
     &-logo {
@@ -441,7 +432,7 @@ input[type="radio"].visually-hidden {
                     font-size: 16px;
                     line-height: 19px;
                     p {
-                        display: block;
+                        display: inline-block;
                         margin-top: 15px;
                         margin-bottom: 25px;
                     }
@@ -1514,11 +1505,23 @@ input[type="radio"].visually-hidden {
 }
 
 // MODAL
-.modal {
+.modal-wrapper {
+    display: none;
     position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 95;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+    position: absolute;
     color: #1A212F;
     background-color: #FFFEFD;
-    z-index: 99;
+    z-index: 100;
 }
 
 .modal-booking {
@@ -1535,6 +1538,10 @@ input[type="radio"].visually-hidden {
     @include font-Lato-Regular();
     @include font-main-color();
     overflow: hidden;
+    -webkit-animation-name: opacity-in;
+            animation-name: opacity-in;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
     @media #{$sm} {
         width: 502px;
         height: 629px;
@@ -1658,7 +1665,7 @@ input[type="radio"].visually-hidden {
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.7);
-    z-index: 90;
+    z-index: 97;
     display: none;
 }
 
@@ -1690,6 +1697,10 @@ input[type="radio"].visually-hidden {
     @include font-main-color();
     text-align: center;
     overflow: hidden;
+    -webkit-animation-name: opacity-in;
+            animation-name: opacity-in;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
     @media #{$sm} {
         width: 502px;
         height: 269px;
@@ -1796,10 +1807,6 @@ input[type="radio"].visually-hidden {
 
 .modal-show {
     display: block;
-    -webkit-animation-name: opacity-in;
-            animation-name: opacity-in;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
 }
 
 
