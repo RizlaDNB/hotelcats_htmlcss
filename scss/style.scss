@@ -1657,8 +1657,6 @@ input[type="radio"].visually-hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(255, 255, 255, 0.7);
     z-index: 90;
     display: none;
@@ -1679,7 +1677,7 @@ input[type="radio"].visually-hidden {
 
 .modal-booking-successful {
     display: none;
-    top: 370px;
+    top: 690px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
