@@ -20,5 +20,6 @@ for (var i = 0; i < menuLink.length; i++) {
         burgerIcon.classList.toggle('section-header-burger-active');
         headerMenu.classList.toggle('section-header-menu-active');
         body.classList.toggle('body-lock');
+        header.classList.toggle('section-header-active');
     })  
 };
