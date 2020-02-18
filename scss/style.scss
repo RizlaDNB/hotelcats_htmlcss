@@ -251,20 +251,6 @@ input[type="radio"].visually-hidden {
             align-items: center;
     padding-left: 98px;
     padding-right: 98px;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: #FAC663;
-        z-index: 4;
-        opacity: 0;
-        -webkit-transition: 0.1s;
-        transition: 0.1s;
-        display: none;
-    }
     @media #{$md} {
         padding-left: 45px;
         padding-right: 45px;
@@ -273,10 +259,27 @@ input[type="radio"].visually-hidden {
         padding-left: 15px;
         padding-right: 15px;
     }
-    &-active {
+    @media #{$xs} {
         &::before {
-            opacity: 1;
-            display: block;
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #FAC663;
+            z-index: 4;
+            -webkit-transition: 0.1s;
+            transition: 0.1s;
+            display: none;
+        }
+    }
+    &-active {
+        @media #{$xs} {
+            &::before {
+                top: 0;
+                display: block;
+            }
         }
     }
     &-logo {
@@ -1277,23 +1280,99 @@ input[type="radio"].visually-hidden {
 
 .section-catalogue {
     @include block-center();
-    max-width: 1170px;
+    max-width: 1366px;
+    padding-left: 98px;
+    padding-right: 98px;
+    @media #{$md} {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    @media #{$sm}, #{$xs} {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     &-header {
         margin-top: 70px;
         margin-bottom: 60px;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+                align-items: center;
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        @media #{$xs} {
+            flex-basis: 100%;
+        }
+        &-buttons {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+                    justify-content: space-between;
+            width: 324px;
+            &__item {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                span {
+                    &::before, &::after {
+                        content: '';
+                        position: absolute;
+                        top: 17px;
+                        right: 20px;
+                        width: 10px;
+                        height: 2px;
+                        background-color: black;
+                        border-radius: 1px;
+                        @media #{$xs} {
+                            right: 15px;
+                        }
+                    }
+                    &::before {
+                        right: 26px;
+                        -webkit-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                        @media #{$xs} {
+                            right: 21px;
+                        }
+                    }
+                    &::after {
+                        -webkit-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                    }
+                }
+            }
+            @media #{$xs} {
+                margin-top: 40px;
+                width: 100%;
+            }
+        }
     }
     &-filter {
-        min-width: 210px;
+        display: block;
+        width: 210px;
         min-height: 624px;
-        .price-controls input{
+        margin-right: 30px;
+        .price-controls {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+                    justify-content: space-between;
+            input {
             @include font-Lato-Regular();
             font-size: 14px;
             width: 100px;
             height: 24px;
             border: 1px solid #E1E1E1;
             margin-top: 12px;
-            margin-right: 6px;
             margin-bottom: 32px;
+            }
         }
         .filter-item {
             color: #1A212F;
@@ -1364,10 +1443,15 @@ input[type="radio"].visually-hidden {
             border: 2px solid #FAC663;
             font-size: 14px;
         }
+        @media #{$sm}, #{$xs} {
+            display: none;
+        }
     }
     &-items {
         display: -webkit-box;
         display: flex;
+        -webkit-box-pack: center;
+                justify-content: center;
         flex-wrap: wrap;
         max-width: 906px;
         &__item {
@@ -1375,14 +1459,27 @@ input[type="radio"].visually-hidden {
             border: 1px solid #E1E1E1;
             box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
             border-radius: 6px;
-            margin-left: 30px;
             margin-bottom: 30px;
-            width: 272px;
+            width: 270px;
+            margin-right: 15px;
             min-height: 428px;
             -webkit-transition: 0.5s;
             transition: 0.5s;
+            @media #{$sm} {
+                margin-left: 0;
+                width: 324px;
+            }
+            @media #{$xs} {
+                margin-left: 0;
+                width: 290px;
+            }
             &:hover {
                 box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
+            }
+            &--image {
+                img {
+                    width: 100%;
+                }
             }
             &--title {
                 @include font-Rubik();
@@ -1390,6 +1487,9 @@ input[type="radio"].visually-hidden {
                 font-weight: 500;
                 margin-left: 20px;
                 margin-bottom: 12px;
+                @media #{$sm} {
+                    margin-left: 25px;
+                }
             }
             &--subtitle {
                 @include font-Lato-Regular();
@@ -1400,6 +1500,9 @@ input[type="radio"].visually-hidden {
                 span {
                     @include font-Lato-Medium();
                     font-size: 18px;
+                }
+                @media #{$sm} {
+                    margin-left: 25px;
                 }
             }
             &--button {
@@ -1419,8 +1522,75 @@ input[type="radio"].visually-hidden {
                     height: 34px;
                     background: url(../img/catalogue/paw-button-white.png) no-repeat center;
                 }
+                @media #{$sm} {
+                    width: 274px;
+                    padding-left: 75px;
+                }
+                @media #{$xs} {
+                    width: 240px;
+                    padding-left: 58px;
+                }
             }
         }
+    }
+}
+
+.button-catalogue {
+    width: 121px;
+    height: 35px;
+    box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+    @include font-Lato-Regular();
+    @include font-main-color();
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.button-catalogue-filter {
+    display: none;
+    position: relative;
+    @include font-Lato-Semibold();
+    padding-left: 40px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        width: 12px;
+        height: 15px;
+        background: url(../img/catalogue/filter-icon.svg) no-repeat center;
+        @media #{$xs} {
+            left: 12px;
+        }
+    }
+    @media #{$sm}, #{$xs} {
+        display: -webkit-box;
+        display: flex;
+    }
+    @media #{$xs} {
+        width: 111px;
+        padding-left: 32px;
+    }
+}
+
+.button-catalogue-sort {
+    position: relative;
+    width: 174px;
+    padding-left: 30px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        width: 5px;
+        height: 10px;
+        background: url(../img/catalogue/arrow-up-icon.svg) no-repeat center;
+        @media #{$xs} {
+            left: 12px;
+        }
+    }
+    @media #{$xs} {
+        width: 154px;
+        padding-left: 25px;
     }
 }
 
@@ -1459,35 +1629,66 @@ input[type="radio"].visually-hidden {
     @include block-center();
     max-width: 1170px;
     min-height: 379px;
-    background: url(../img/catalogue/promo-block-bg.png) no-repeat center;
+    background: url(../img/catalogue/promo-block-bg.png) no-repeat bottom;
+    background-size: cover;
     border-radius: 10px;
     margin-top: 140px;
     &-paw {
-        position: absolute;
+        position: relative;
+        z-index: 1;
+        img {
+            position: absolute;
+            top: 0;
+            left: -10px;
+            height: 206px;
+            width: 241px;
+            @media #{$sm} {
+                height: 131px;
+                width: 153px;
+            }
+        }
     }
     &-block {
         @include font-main-color();
         padding-left: 270px;
         padding-top: 68px;
         &-title {
+            position: relative;
+            z-index: 2;
             @include font-Rubik();
             font-size: 56px;
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 10px;
+            @media #{$xs} {
+                font-size: 37px;
+                line-height: 44px;
+            }
         }
         &-subtitle {
+            position: relative;
+            z-index: 2;
             @include font-Rubik();
             font-size: 36px;
             font-weight: bold;
             margin-top: 0;
             margin-bottom: -7px;
+            @media #{$xs} {
+                font-size: 24px;
+                line-height: 28px;
+            }
         }
         &-description {
+            position: relative;
+            z-index: 2;
             @include font-Lato-Regular();
             font-size: 16px;
             margin-top: 0;
             margin-bottom: 30px;
+            @media #{$xs} {
+                font-size: 15px;
+                line-height: 21px;
+            }
         }
         &-button {
             padding-left: 30px;
@@ -1500,6 +1701,20 @@ input[type="radio"].visually-hidden {
                 width: 36px;
                 background: url(../img/paw.svg) no-repeat center;
             }
+            @media #{$xs} {
+                @include block-center();
+            }
+        }
+        @media #{$md} {
+            padding-left: 98px;
+        }
+        @media #{$sm} {
+            padding-left: 45px;
+        }
+        @media #{$xs} {
+            padding-top: 50px;
+            padding-left: 0;
+            text-align: center;
         }
     }
 }
@@ -1531,7 +1746,7 @@ input[type="radio"].visually-hidden {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     width: 570px;
-    height: 650px;
+    min-height: 650px;
     padding: 70px 70px;
     box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
     border-radius: 10px;
@@ -1544,12 +1759,12 @@ input[type="radio"].visually-hidden {
             animation-duration: 0.5s;
     @media #{$sm} {
         width: 502px;
-        height: 629px;
+        min-height: 629px;
         padding: 60px 30px;
     }
     @media #{$xs} {
         width: 290px;
-        height: 656px;
+        min-height: 656px;
         padding: 60px 15px;
     }
     &-paw {
@@ -1580,6 +1795,10 @@ input[type="radio"].visually-hidden {
         }
     }
     &-form {
+        width: 430px;
+        @media #{$xs} {
+            width: 260px;
+        }
         p {
             margin: 0;
             margin-bottom: 20px;
@@ -1589,38 +1808,30 @@ input[type="radio"].visually-hidden {
                 font-size: 15px;
                 line-height: 18px;
             }
-        }
-        p:nth-child(1) {
-            @media #{$xs} {
-                flex-basis: 100%;
-                margin-bottom: 15px;
+            .modal-input {
+                width: 430px;
+                padding: 15px 30px;
+                border-radius: 25px;
+                border: 1px solid #D7D7D7;
+                font: inherit;
+                @include font-main-color();
+                @media #{$xs} {
+                    width: 260px;
+                    padding: 15px 20px;
+                }
             }
-        }
-        input[type='text'] {
-            box-sizing: border-box;
-            width: 430px;
-            padding: 15px 30px;
-            border-radius: 25px;
-            border: 1px solid #D7D7D7;
-            font: inherit;
-            @include font-main-color();
-            @media #{$xs} {
-                width: 260px;
-                padding: 15px 20px;
-            }
-        }
-        input[type='date'] {
-            box-sizing: border-box;
-            min-width: 129px;
-            padding: 15px 0;
-            padding-left: 10px;
-            border-radius: 25px;
-            border: 1px solid #D7D7D7;
-            font: inherit;
-            @include font-alt-color();
-            @media #{$xs} {
-                min-width: 107px;
-                padding-left: 5px;
+            .modal-date-input {
+                width: 129px;
+                padding: 15px 0;
+                padding-left: 20px;
+                border-radius: 25px;
+                border: 1px solid #D7D7D7;
+                font: inherit;
+                @include font-alt-color();
+                @media #{$xs} {
+                    width: 107px;
+                    padding-left: 10px;
+                }
             }
         }
     }
@@ -1677,19 +1888,25 @@ input[type="radio"].visually-hidden {
     -webkit-box-align: center;
             align-items: center;
     margin-bottom: 30px;
+    p:nth-child(1) {
+        @media #{$xs} {
+            flex-basis: 100%;
+        }
+    }
     @media #{$xs} {
         flex-wrap: wrap;
     }
+    
 }
 
 .modal-booking-successful {
     display: none;
-    top: 690px;
+    top: 700px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     width: 570px;
-    height: 269px;
+    min-height: 269px;
     padding: 70px 70px;
     box-shadow: 0px 0px 25px rgba(208, 208, 208, 1);
     border-radius: 10px;
@@ -1702,12 +1919,14 @@ input[type="radio"].visually-hidden {
     -webkit-animation-duration: 0.5s;
             animation-duration: 0.5s;
     @media #{$sm} {
+        top: 680px;
         width: 502px;
-        height: 269px;
+        min-height: 269px;
     }
     @media #{$xs} {
+        top: 720px;
         width: 290px;
-        height: 277px;
+        min-height: 277px;
         padding: 60px 27px;
     }
     &-paw {
