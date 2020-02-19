@@ -12,7 +12,7 @@ ymaps.ready(function () {
         ),
 
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
+            hintContent: 'Котейка',
             balloonContent: 'Это красивая метка'
         }, {
             // Опции.

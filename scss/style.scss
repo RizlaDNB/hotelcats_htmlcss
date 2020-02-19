@@ -435,7 +435,7 @@ input[type="radio"].visually-hidden {
                     font-size: 16px;
                     line-height: 19px;
                     p {
-                        display: inline-block;
+                        display: block;
                         margin-top: 15px;
                         margin-bottom: 25px;
                     }
@@ -746,7 +746,7 @@ input[type="radio"].visually-hidden {
                     width: 345px;
                     height: 266px;
                     left: 333px;
-                    bottom: 30px;
+                    bottom: 45px;
                     padding: 35px;
                 }
                 @media (max-width: 750px) {
@@ -1112,6 +1112,8 @@ input[type="radio"].visually-hidden {
             }
         }
         .section-contact-map {
+            position: relative;
+            z-index: 1;
             width: 798px;
             min-height: 580px;
             background: url(../img/map_underlay.png) no-repeat center;
