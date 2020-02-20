@@ -7,6 +7,8 @@ var body = document.querySelector('body'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
     modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
     modalSend = document.querySelector('.modal-send-button'),
+    catalogueFilterForm = document.querySelector('.section-catalogue-filter'),
+    catalogueFilterButton = document.querySelector('.button-catalogue-filter'),
     form = modalBooking.querySelector('.modal-booking-form'),
     emptyFieldCheck = form.querySelectorAll('.field-checker'),
     ownerName = form.querySelector('[name=owner-name]'),
@@ -38,6 +40,7 @@ for (var i = 0; i < modalClose.length; i++) {
         modalOverlay.classList.remove('modal-show');
         modalSuccefful.classList.remove('modal-show');
         modalWrapper.classList.remove('modal-show');
+        catalogueFilterForm.classList.remove('modal-show');
         body.classList.remove('scroll-lock');
     })  
 };
@@ -50,6 +53,7 @@ modalOverlay.addEventListener('click', function(evt) {
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
     modalWrapper.classList.remove('modal-show');
+    catalogueFilterForm.classList.remove('modal-show');
     body.classList.remove('scroll-lock');
 });
 
@@ -65,11 +69,18 @@ modalSucceffulCloseBtn.addEventListener('click', function(evt) {
 });
 
 
-//Временный функционал отправки формы
+//Временный функционал отправки формы бронирования
 modalSend.addEventListener('click', function(evt) {
     evt.preventDefault();
     modalSuccefful.classList.add('modal-show');
     modalSucceffulCloseBtn.focus();
+});
+
+//Открытие фильтра каталога
+catalogueFilterButton.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    catalogueFilterForm.classList.add('modal-show');
+    modalOverlay.classList.add('modal-show');
 });
 
 //TODO Алерт, в случае если не все поля формы заполнены

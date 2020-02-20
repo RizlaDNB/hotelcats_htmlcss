@@ -1318,6 +1318,10 @@ input[type="radio"].visually-hidden {
             -webkit-box-pack: justify;
                     justify-content: space-between;
             width: 324px;
+            @media #{$xs} {
+                margin-top: 40px;
+                width: 100%;
+            }
             &__item {
                 position: relative;
                 margin: 0;
@@ -1350,9 +1354,8 @@ input[type="radio"].visually-hidden {
                     }
                 }
             }
-            @media #{$xs} {
-                margin-top: 40px;
-                width: 100%;
+            &__select {
+                
             }
         }
     }
@@ -1361,6 +1364,31 @@ input[type="radio"].visually-hidden {
         width: 210px;
         min-height: 624px;
         margin-right: 30px;
+        
+        @media #{$sm}, #{$xs} {
+            display: none;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FFFEFD;
+            z-index: 100;
+            box-shadow: 0px 4px 25px rgba(153, 153, 153, 0.25);
+            border-radius: 6px;
+        }
+        @media #{$sm} {
+            width: 332px;
+            padding: 50px 60px;
+        }
+        @media #{$xs} {
+            width: 290px;
+            padding: 50px 25px;
+        }
+        .range-filter {
+            @media #{$xs} {
+                width: 212px;
+            }
+        }
         .price-controls {
             display: -webkit-box;
             display: flex;
@@ -1444,10 +1472,20 @@ input[type="radio"].visually-hidden {
             text-align: center;
             border: 2px solid #FAC663;
             font-size: 14px;
+            cursor: pointer;
+            @media #{$xs} {
+                width: 240px;
+            }
         }
-        @media #{$sm}, #{$xs} {
+        .filter-submit-button {
+            background-color: #FAC663;
+            margin-bottom: 15px;
             display: none;
+            @media #{$sm}, #{$xs} {
+                display: inline-block;
+            }
         }
+        
     }
     &-items {
         display: -webkit-box;
@@ -1878,6 +1916,7 @@ input[type="radio"].visually-hidden {
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
     z-index: 97;
     display: none;
 }

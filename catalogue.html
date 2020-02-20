@@ -61,10 +61,18 @@
                 <p class="section-catalogue-header-buttons__item">
                     <a href="" class="button-main button-catalogue button-catalogue-filter">Фильтры</a>
                 </p>
-                <p class="section-catalogue-header-buttons__item">
+                <div class="section-catalogue-header-buttons__select">
+                    <select name="filter-select" id="filter-select">
+                        <option value="1">По площади</option>
+                        <option value="2">По площади</option>
+                        <option value="3">По цене</option>
+                        <option value="4">По цене</option>
+                    </select>
+                </div>
+                <!-- <p class="section-catalogue-header-buttons__item">
                     <a href="" class="button-main button-catalogue button-catalogue-sort">По площади</a>
                     <span></span>
-                </p>
+                </p> -->
             </div>
         </div>
         <div class="container">
@@ -159,9 +167,12 @@
                             </li>
                         </ul>
                     </fieldset>
+                    <button type="button" class="button-main filter-button filter-submit-button">Подобрать(в процессе)</button>
+                    <button class="modal-close-button" type="button">Закрыть</button>
                     <button type="reset" class="button-main filter-button" form="filter-form">Сбросить фильтр</button>
                 </form>
             </div>
+            <div class="modal-overlay"></div>
             <div class="section-catalogue-items">
                 <div class="section-catalogue-items__item">
                     <div class="section-catalogue-items__item--image">
@@ -409,10 +420,11 @@
     </script>
     <script src="js/slick.min.js"></script>
     <script src="js/slider-setting.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=e56c147b-2892-431e-96b8-99824e33bc1e" type="text/javascript"></script>
-    <script src="js/icon_customImage.js" type="text/javascript"></script>
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=e56c147b-2892-431e-96b8-99824e33bc1e" type="text/javascript"></script>
+    <script src="js/icon_customImage.js" type="text/javascript"></script> -->
    
     <script src="js/modal.js"></script>
     <script src="js/burger.js"></script>
+    <!-- <script src="js/select.js"></script> -->
 </body>
 </html>
