@@ -54,6 +54,7 @@ modalOverlay.addEventListener('click', function(evt) {
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
     modalWrapper.classList.remove('modal-show');
+    modalCloseFilter.classList.remove('modal-show');
     catalogueFilterForm.classList.remove('modal-show');
     body.classList.remove('scroll-lock');
 });

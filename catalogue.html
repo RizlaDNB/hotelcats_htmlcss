@@ -20,14 +20,14 @@
         <div class="section-header-burger">
             <span></span>
         </div>
-        <div class="section-header-menu">
+        <nav class="section-header-menu">
             <ul>
                 <li><a href="index.html#features-section" class="section-header-menu__item">Почему мы?</a></li>
                 <li><a href="catalogue.html" class="section-header-menu__item">Номера</a></li>
                 <li><a href="index.html#feedback-section" class="section-header-menu__item">Отзывы</a></li>
                 <li><a href="index.html#address-section" class="section-header-menu__item">Как нас найти</a></li>
             </ul>
-            <div class="section-header-menu__item--mobile"><p>8 (800) 333-55-99</p></div>
+            <div class="section-header-menu__item--mobile"><p><a href="tel:88003335599">8 (800) 333-55-99</a></p></div>
             <div class="section-header-menu__item--mobile">
                     <a href="#">
                         <svg class='social-icon' width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@
                         </svg>
                     </a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- CATALOGUE -->
@@ -58,14 +58,25 @@
         <div class="section-catalogue-header">
             <h1 class="section-catalogue-header-title headers-text-main">Наши номера</h1>
             <div class="section-catalogue-header-buttons">
-                <p class="section-catalogue-header-buttons__item">
-                    <a href="" class="button-main button-catalogue button-catalogue-filter">Фильтры</a>
+                <p class="section-catalogue-header-buttons__filter">
+                    <button class="button-main button-catalogue-filter">Фильтры</button>
                 </p>
                 <!-- SELECT V2 -->
-                <p class="section-catalogue-header-buttons__item">
-                    <a href="" class="button-main button-catalogue button-catalogue-sort">По площади</a>
-                    <span></span>
-                </p>
+                <div class="section-catalogue-header-buttons__sort">
+                    <p class="section-catalogue-header-buttons__sort--button">
+                        <button class="button-catalogue-sort sort-size-lower" data-sort='size-low'>По площади</button>
+                    </p>
+                    <!-- <p class="section-catalogue-header-buttons__sort--button">
+                        <button class="button-catalogue-sort sort-size-bigger" data-sort='size-big'>По площади</button>
+                    </p>
+                    <p class="section-catalogue-header-buttons__sort--button">
+                        <button class="button-catalogue-sort sort-price-lower" data-sort='price-low'>По цене</button>
+                    </p>
+                    <p class="section-catalogue-header-buttons__sort--button">
+                        <button class="button-catalogue-sort sort-price-bigger" data-sort='price-big'>По цене</button>
+                    </p> -->
+                    <button class="section-catalogue-header-buttons__sort--expand"></button>
+                </div>
                 <!-- SELECT V1 -->
                 <!-- <div class="section-catalogue-header-buttons__select">
                     <select name="filter-select" id="filter-select">
@@ -94,35 +105,35 @@
                         <ul>
                             <li class="filter-option">
                                 <label class="filter-checkbox">
-                                    <input class="visually-hidden" type="checkbox" name="063sqm" id="filter-063sqm">
+                                    <input class="visually-hidden1" type="checkbox" name="0.63sqm" id="filter-0.63sqm" data-filter='0.63sqm'>
                                     <span class="checkbox-indicator"></span>
                                     0,63 м2
                                 </label>
                             </li>
                             <li class="filter-option">
                                 <label class="filter-checkbox">
-                                    <input class="visually-hidden" type="checkbox" name="090sqm" id="filter-090sqm">
+                                    <input class="visually-hidden1" type="checkbox" name="0.90sqm" id="filter-0.90sqm" data-filter='0.90sqm'>
                                     <span class="checkbox-indicator"></span>
                                     0,90 м2
                                 </label>
                             </li>
                             <li class="filter-option">
                                 <label class="filter-checkbox">
-                                    <input class="visually-hidden" type="checkbox" name="113sqm" id="filter-113sqm">
+                                    <input class="visually-hidden1" type="checkbox" name="1.13sqm" id="filter-1.13sqm" data-filter='1.13sqm'>
                                     <span class="checkbox-indicator"></span>
                                     1,13 м2
                                 </label>    
                             </li>
                             <li class="filter-option">
                                 <label class="filter-checkbox">
-                                    <input class="visually-hidden" type="checkbox" name="256sqm" id="filter-256sqm">
+                                    <input class="visually-hidden1" type="checkbox" name="2.56sqm" id="filter-2.56sqm" data-filter='2.56sqm'>
                                     <span class="checkbox-indicator"></span>
                                     2,56 м2
                                 </label>
                             </li>
                             <li class="filter-option">
                                 <label class="filter-checkbox">
-                                    <input class="visually-hidden" type="checkbox" name="288sqm" id="filter-288sqm">
+                                    <input class="visually-hidden1" type="checkbox" name="2.88sqm" id="filter-2.88sqm" data-filter='2.88sqm'>
                                     <span class="checkbox-indicator"></span>
                                     2,88 м2
                                 </label>
@@ -170,12 +181,12 @@
                         </ul>
                     </fieldset>
                     <button type="button" class="button-main filter-button filter-submit-button">Подобрать(в процессе)</button>
-                    <button type="reset" class="button-main filter-button" form="filter-form">Сбросить фильтр</button>
+                    <button type="reset" class="button-main filter-button" form="filter-form" data-filter='all'>Сбросить фильтр</button>
                     <button class="modal-filter-close-button" type="button">Закрыть</button>
                 </form>
             </div>
             <div class="section-catalogue-items">
-                <div class="section-catalogue-items__item">
+                <div class="section-catalogue-items__item" data-size='0.63' data-price='100'>
                     <div class="section-catalogue-items__item--image">
                         <img src="img/catalogue/ekonom.png" alt="">
                     </div>
@@ -189,7 +200,7 @@
                     <p class="section-catalogue-items__item--subtitle">Цена за сутки: <span>100₽</span></p>
                     <a href="#" class="button-main section-catalogue-items__item--button modal-open-button">Забронировать</a>
                 </div>
-                <div class="section-catalogue-items__item">
+                <div class="section-catalogue-items__item" data-size='0.9' data-price='200'>
                     <div class="section-catalogue-items__item--image">
                         <img src="img/catalogue/ekonom-plus.png" alt="">
                     </div>
@@ -204,7 +215,7 @@
                     <p class="section-catalogue-items__item--subtitle">Цена за сутки: <span>200₽</span></p>
                     <a href="#" class="button-main section-catalogue-items__item--button modal-open-button">Забронировать</a>
                 </div>
-                <div class="section-catalogue-items__item">
+                <div class="section-catalogue-items__item" data-size='1.13' data-price='250'>
                     <div class="section-catalogue-items__item--image">
                         <img src="img/catalogue/comfort.png" alt="">
                     </div>
@@ -220,7 +231,7 @@
                     <p class="section-catalogue-items__item--subtitle">Цена за сутки: <span>250₽</span></p>
                     <a href="#" class="button-main section-catalogue-items__item--button modal-open-button">Забронировать</a>
                 </div>
-                <div class="section-catalogue-items__item">
+                <div class="section-catalogue-items__item" data-size='1.56' data-price='350'>
                     <div class="section-catalogue-items__item--image">
                         <img src="img/catalogue/suite.png" alt="">
                     </div>
@@ -236,7 +247,7 @@
                     <p class="section-catalogue-items__item--subtitle">Цена за сутки: <span>350₽</span></p>
                     <a href="#" class="button-main section-catalogue-items__item--button modal-open-button">Забронировать</a>
                 </div>
-                <div class="section-catalogue-items__item">
+                <div class="section-catalogue-items__item" data-size='2.56' data-price='500'>
                     <div class="section-catalogue-items__item--image">
                         <img src="img/catalogue/lux.png" alt="">
                     </div>
@@ -253,7 +264,7 @@
                     <p class="section-catalogue-items__item--subtitle">Цена за сутки: <span>500₽</span></p>
                     <a href="#" class="button-main section-catalogue-items__item--button modal-open-button">Забронировать</a>
                 </div>
-                <div class="section-catalogue-items__item">
+                <div class="section-catalogue-items__item" data-size='2.88' data-price='600'>
                     <div class="section-catalogue-items__item--image">
                         <img src="img/catalogue/super-lux.png" alt="">
                     </div>
@@ -297,7 +308,7 @@
                 <h2 class="section-contact-info-title">Режим работы</h2>
                 <p class="section-contact-info-subtitle">Ежедневно, с 9:00 до 20:00</p>
                 <h2 class="section-contact-info-title">Телефон</h2>
-                <p class="section-contact-info-subtitle">8 (800) 333-55-99</p>
+                <p class="section-contact-info-subtitle"><a href="tel:88003335599">8 (800) 333-55-99</a></p>
                 <h2 class="section-contact-info-title">E-mail</h2>
                 <p class="section-contact-info-subtitle">info@cat-hotel.ru</p>
                 <h2 class="section-contact-info-title">Социальные сети</h2>
@@ -332,7 +343,7 @@
 
     <!-- FOOTER -->
     <footer class="section-footer">
-        <div class="section-footer-menu">
+        <nav class="section-footer-menu">
             <div class="section-footer-menu-logo">
                 <a href="index.html" class="section-header-logo__link">
                     <img src="img/лого.svg" alt="Котейка">
@@ -346,7 +357,7 @@
                     <li><a href="#address-section" class="section-footer-menu-nav__item">Как нас найти</a></li>
                 </ul>
             </div>
-        </div>
+        </nav>
         <div class="section-footer-copyrights">
             <span>
                 <img src="img/copyright.svg" alt="">
@@ -426,6 +437,7 @@
    
     <script src="js/modal.js"></script>
     <script src="js/burger.js"></script>
-    <script src="js/select.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/sort.js"></script>
 </body>
 </html>
