@@ -1786,6 +1786,41 @@ input[type="radio"].visually-hidden {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
+.modal-filter-close-button {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  background-color: #FFFEFD;
+  border: 0;
+  cursor: pointer; }
+  @media (max-width: 767.98px) {
+    .modal-filter-close-button {
+      top: 25px;
+      right: 25px; } }
+  @media (max-width: 575.98px) {
+    .modal-filter-close-button {
+      top: 20px;
+      right: 20px; } }
+  .modal-filter-close-button::before, .modal-filter-close-button::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: -4px;
+    width: 24px;
+    height: 2px;
+    border-radius: 20%;
+    background-color: #1A212F; }
+  .modal-filter-close-button:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .modal-filter-close-button:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
 .modal-show {
   display: block; }
 

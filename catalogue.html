@@ -61,23 +61,25 @@
                 <p class="section-catalogue-header-buttons__item">
                     <a href="" class="button-main button-catalogue button-catalogue-filter">Фильтры</a>
                 </p>
-                <div class="section-catalogue-header-buttons__select">
+                <!-- SELECT V2 -->
+                <p class="section-catalogue-header-buttons__item">
+                    <a href="" class="button-main button-catalogue button-catalogue-sort">По площади</a>
+                    <span></span>
+                </p>
+                <!-- SELECT V1 -->
+                <!-- <div class="section-catalogue-header-buttons__select">
                     <select name="filter-select" id="filter-select">
-                        <option value="1">По площади</option>
+                        <option value="1" selected>По площади</option>
                         <option value="2">По площади</option>
                         <option value="3">По цене</option>
                         <option value="4">По цене</option>
                     </select>
-                </div>
-                <!-- <p class="section-catalogue-header-buttons__item">
-                    <a href="" class="button-main button-catalogue button-catalogue-sort">По площади</a>
-                    <span></span>
-                </p> -->
+                </div> -->
             </div>
         </div>
         <div class="container">
             <div class="section-catalogue-filter">
-                <form id="filter-form" method="get" action="">
+                <form id="filter-form" method="POST" action="">
                     <fieldset class="filter-item">
                       <legend>Цена за сутки,<span>₽</span></legend>
                       <div class="range-filter">
@@ -168,11 +170,10 @@
                         </ul>
                     </fieldset>
                     <button type="button" class="button-main filter-button filter-submit-button">Подобрать(в процессе)</button>
-                    <button class="modal-close-button" type="button">Закрыть</button>
                     <button type="reset" class="button-main filter-button" form="filter-form">Сбросить фильтр</button>
+                    <button class="modal-filter-close-button" type="button">Закрыть</button>
                 </form>
             </div>
-            <div class="modal-overlay"></div>
             <div class="section-catalogue-items">
                 <div class="section-catalogue-items__item">
                     <div class="section-catalogue-items__item--image">
@@ -425,6 +426,6 @@
    
     <script src="js/modal.js"></script>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/select.js"></script> -->
+    <script src="js/select.js"></script>
 </body>
 </html>

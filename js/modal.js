@@ -4,6 +4,7 @@ var body = document.querySelector('body'),
     modalOverlay = document.querySelector('.modal-overlay'),
     modalOpen = document.getElementsByClassName('modal-open-button'),
     modalClose = document.querySelectorAll('.modal-close-button'),
+    modalCloseFilter = document.querySelector('.modal-filter-close-button'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
     modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
     modalSend = document.querySelector('.modal-send-button'),
@@ -80,7 +81,18 @@ modalSend.addEventListener('click', function(evt) {
 catalogueFilterButton.addEventListener('click', function(evt) {
     evt.preventDefault();
     catalogueFilterForm.classList.add('modal-show');
+    modalCloseFilter.classList.add('modal-show');
     modalOverlay.classList.add('modal-show');
+    modalWrapper.classList.add('modal-show');
+});
+
+//Закрытие фильтра по крестику
+modalCloseFilter.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    catalogueFilterForm.classList.remove('modal-show');
+    modalCloseFilter.classList.remove('modal-show');
+    modalOverlay.classList.remove('modal-show');
+    modalWrapper.classList.remove('modal-show');
 });
 
 //TODO Алерт, в случае если не все поля формы заполнены
