@@ -19,7 +19,7 @@ for (var i = 0; i < menuLink.length; i++) {
     menuLink[i].addEventListener('click', function() {
         burgerIcon.classList.toggle('section-header-burger-active');
         headerMenu.classList.toggle('section-header-menu-active');
-        body.classList.toggle('scroll-lock');
+        body.classList.remove('scroll-lock');
         header.classList.toggle('section-header-active');
     })  
 };

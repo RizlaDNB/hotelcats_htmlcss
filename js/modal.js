@@ -8,8 +8,9 @@ var body = document.querySelector('body'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
     modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
     modalSend = document.querySelector('.modal-send-button'),
-    catalogueFilterForm = document.querySelector('.section-catalogue-filter'),
-    catalogueFilterButton = document.querySelector('.button-catalogue-filter'),
+    catalogueFilterForm = document.querySelector('.section-catalogue-body-filter'),
+    catalogueFilterOpenButton = document.querySelector('.button-catalogue-filter'),
+    catalogueFilterCloseButton = document.querySelector('.filter-submit-button'),
     form = modalBooking.querySelector('.modal-booking-form'),
     emptyFieldCheck = form.querySelectorAll('.field-checker'),
     ownerName = form.querySelector('[name=owner-name]'),
@@ -18,7 +19,6 @@ var body = document.querySelector('body'),
     email = form.querySelector('[name=e-mail]'),
     fromDate = form.querySelector('[name=from-date]'),
     toDate = form.querySelector('[name=to-date]');
-
 
 //Открытие модального окна с любой кнопки
 for (var i = 0; i < modalOpen.length; i++) {
@@ -79,7 +79,7 @@ modalSend.addEventListener('click', function(evt) {
 });
 
 //Открытие фильтра каталога
-catalogueFilterButton.addEventListener('click', function(evt) {
+catalogueFilterOpenButton.addEventListener('click', function(evt) {
     evt.preventDefault();
     catalogueFilterForm.classList.add('modal-show');
     modalCloseFilter.classList.add('modal-show');
@@ -89,6 +89,14 @@ catalogueFilterButton.addEventListener('click', function(evt) {
 
 //Закрытие фильтра по крестику
 modalCloseFilter.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    catalogueFilterForm.classList.remove('modal-show');
+    modalCloseFilter.classList.remove('modal-show');
+    modalOverlay.classList.remove('modal-show');
+    modalWrapper.classList.remove('modal-show');
+});
+
+catalogueFilterCloseButton.addEventListener('click', function(evt) {
     evt.preventDefault();
     catalogueFilterForm.classList.remove('modal-show');
     modalCloseFilter.classList.remove('modal-show');

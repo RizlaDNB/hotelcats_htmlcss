@@ -1,23 +1,10 @@
-// $(function() {
+$(".filter-option :checkbox").click(function() {
+    $(".section-catalogue-body-items__item").hide();
+    $(".filter-option :checkbox:checked").each(function() {
+        $("." + $(this).val()).show();
+    });
+});
 
-//     let filter = $("[data-filter]");
-
-//     filter.on("click", function() {
-        
-//         let size = $(this).data('filter');
-        
-//         if(size == 'all') {
-//             $("[data-size]").removeClass("hide");
-//         } else {
-//             $("[data-size]").each(function() {
-//                 let workSize = $(this).data('size');
-
-//                 if(workSize != size) {
-//                     $(this).addClass('hide');
-//                 } else {
-//                     $(this).removeClass('hide');
-//                 }
-//             });
-//         }
-//     });
-// });
+$('.filter-reset-button').click(function() {
+    $('.section-catalogue-body-items__item').show();
+});
