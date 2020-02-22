@@ -3,7 +3,7 @@ var body = document.querySelector('body'),
     modalBooking = document.querySelector('.modal-booking'),
     modalOverlay = document.querySelector('.modal-overlay'),
     modalOpen = document.getElementsByClassName('modal-open-button'),
-    modalClose = document.querySelectorAll('.modal-close-button'),
+    modalClose = document.getElementsByClassName('modal-close-button'),
     modalCloseFilter = document.querySelector('.modal-filter-close-button'),
     modalSuccefful = document.querySelector('.modal-booking-successful'),
     modalSucceffulCloseBtn = document.querySelector('.button-modal-booking-successful'),
@@ -37,12 +37,12 @@ for (var i = 0; i < modalOpen.length; i++) {
 for (var i = 0; i < modalClose.length; i++) {
     modalClose[i].addEventListener('click', function(evt) {
         evt.preventDefault();
+        body.classList.remove('scroll-lock');
         modalBooking.classList.remove('modal-show');
         modalOverlay.classList.remove('modal-show');
         modalSuccefful.classList.remove('modal-show');
         modalWrapper.classList.remove('modal-show');
         catalogueFilterForm.classList.remove('modal-show');
-        body.classList.remove('scroll-lock');
     })  
 };
 
