@@ -499,7 +499,7 @@ input[type="radio"].visually-hidden {
     height: 504px;
     background-image:
     url(../img/kotik3.png),
-    url(../img/kotik2.png);
+    url(../img/kotik2.jpg);
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     background-size: auto, auto;
@@ -515,7 +515,7 @@ input[type="radio"].visually-hidden {
     @media #{$sm}, #{$xs} {
         background-image:
         url(../img/tablet/landing-mask-bg.png),
-        url(../img/tablet/landing-bg.png);
+        url(../img/tablet/landing-bg.jpg);
         background-position: center, center;
         background-repeat: no-repeat, no-repeat;
         padding-top: 140px;
@@ -1157,7 +1157,7 @@ input[type="radio"].visually-hidden {
             z-index: 1;
             width: 798px;
             min-height: 580px;
-            background: url(../img/map_underlay.png) no-repeat center;
+            background: url(../img/map_underlay.jpg) no-repeat center;
             flex-shrink: 1;
             @media #{$lg} {
                 width: 650px;
@@ -1769,7 +1769,7 @@ input[type="radio"].visually-hidden {
     @include block-center();
     max-width: 1170px;
     min-height: 379px;
-    background: url(../img/catalogue/promo-block-bg.png) no-repeat bottom;
+    background: url(../img/catalogue/promo-block-bg.jpg) no-repeat bottom;
     background-size: cover;
     border-radius: 10px;
     margin-top: 140px;
