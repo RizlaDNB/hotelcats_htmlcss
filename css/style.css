@@ -605,7 +605,6 @@ input[type="radio"].visually-hidden {
       position: relative;
       z-index: 1; }
       .section-rooms-slider-item__image {
-        border-radius: 10px;
         width: 600px;
         height: 404px; }
         @media (max-width: 1120px) {
@@ -621,7 +620,13 @@ input[type="radio"].visually-hidden {
             height: 192px;
             margin-left: 0; } }
         .section-rooms-slider-item__image img {
-          max-width: 100%; }
+          max-width: 100%;
+          border-radius: 10px; }
+          @media (max-width: 575.98px) {
+            .section-rooms-slider-item__image img {
+              border-radius: 0;
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px; } }
       .section-rooms-slider-item__description {
         font-family: 'Lato Regular', sans-serif;
         color: #1a212f;

@@ -745,8 +745,10 @@ input[type="radio"].visually-hidden {
         &-item {
             position: relative;
             z-index: 1;
+
             &__image {
-                border-radius: 10px;
+                // border-radius: 10px;
+                // overflow: hidden;
                 width: 600px;
                 height: 404px;
                 @media (max-width: 1120px) {
@@ -763,6 +765,12 @@ input[type="radio"].visually-hidden {
                 }
                 img {
                     max-width: 100%;
+                    border-radius: 10px;
+                    @media #{$xs} {
+                        border-radius: 0;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
                 }
             }
             &__description {
