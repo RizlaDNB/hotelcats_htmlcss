@@ -48,15 +48,14 @@ for (var i = 0; i < modalClose.length; i++) {
 
 
 //Закрытие модалки по клику в оверлей
-modalOverlay.addEventListener('click', function(evt) {
-    evt.preventDefault();
+modalOverlay.addEventListener('click', function() {
+    body.classList.remove('scroll-lock');
     modalBooking.classList.remove('modal-show');
     modalOverlay.classList.remove('modal-show');
     modalSuccefful.classList.remove('modal-show');
     modalWrapper.classList.remove('modal-show');
     modalCloseFilter.classList.remove('modal-show');
     catalogueFilterForm.classList.remove('modal-show');
-    body.classList.remove('scroll-lock');
 });
 
 
